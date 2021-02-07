@@ -26,18 +26,18 @@ public class BaseViewController: UIViewController {
         return loader
     }()
     
-    lazy var baseSearchController: UISearchController = {
-        let search = UISearchController(searchResultsController: nil)
-        search.searchBar.scopeButtonTitles = nil
-        search.searchBar.scopeBarBackgroundImage = nil
-        search.searchBar.backgroundImage = UIImage()
-        search.searchBar.setBackgroundImage(UIImage(named: "search-bar"),
-                                            for: UIBarPosition.bottom,
-                                            barMetrics: UIBarMetrics.default)
-        search.searchBar.barStyle = .default
-        search.searchBar.searchTextField.textColor = Colour.black
-        search.hidesNavigationBarDuringPresentation = false
-        return search
+    lazy var baseSearchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.barStyle = .default
+        searchBar.backgroundColor = Colour.primary
+        searchBar.frame = .zero
+        searchBar.scopeButtonTitles = nil
+        searchBar.scopeBarBackgroundImage = nil
+        searchBar.backgroundImage = UIImage()
+        searchBar.setBackgroundImage(UIImage(named: "search-bar"),
+                                     for: .bottom,
+                                     barMetrics: .default)
+        return searchBar
     }()
 
     public override func viewDidLoad() {

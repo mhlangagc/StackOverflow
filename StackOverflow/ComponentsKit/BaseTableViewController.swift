@@ -9,10 +9,9 @@ import UIKit
 
 protocol BaseTableViewProtocol {
     func registerTableViewCells()
-    func registerDelegates()
 }
 
-public class BaseTableViewController: BaseViewController {
+public class BaseTableViewController: BaseViewController, BaseTableViewProtocol {
     
     lazy var baseTableView: UITableView = {
          let tableView = UITableView(frame: .zero,
@@ -26,5 +25,11 @@ public class BaseTableViewController: BaseViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        registerTableViewCells()
+    }
+    
+    func registerTableViewCells() {
+        baseTableView.register(SearchResultsCell.self,
+                               forCellReuseIdentifier: SearchResultsCell.identifier)
     }
 }

@@ -7,12 +7,7 @@
 
 import UIKit
 
-extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate, UITextFieldDelegate {
-    
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
+extension SearchViewController: UISearchBarDelegate, UITextFieldDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         isSearching = true
@@ -53,7 +48,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate, UI
     }
     
     @objc func searchForText() {
-        guard let searchText = baseSearchController.searchBar.searchTextField.text else { return }
+        guard let searchText = baseSearchBar.searchTextField.text else { return }
         viewModel.searchWithQuery(searchText.lowercased())
     }
     

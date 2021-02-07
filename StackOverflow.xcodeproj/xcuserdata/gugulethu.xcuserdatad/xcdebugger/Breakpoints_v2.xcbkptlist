@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4EDC936C-3B84-4147-A155-AE4BAFCC8E32"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1316E529-AD04-4DFE-8092-EE842482F26D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StackOverflow/Controllers/SearchController/ViewModel/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "searchWithQuery(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1316E529-AD04-4DFE-8092-EE842482F26D - 1fdd6d8cbd62c411"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StackOverflow.SearchViewModel.searchWithQuery(Swift.String) -&gt; ()"
+                  moduleName = "StackOverflow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gugulethu/Documents/StackOverflow/StackOverflow/Controllers/SearchController/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "167">
+               </Location>
+               <Location
+                  uuid = "1316E529-AD04-4DFE-8092-EE842482F26D - 56ce560970a8c81c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in StackOverflow.SearchViewModel.searchWithQuery(Swift.String) -&gt; ()"
+                  moduleName = "StackOverflow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gugulethu/Documents/StackOverflow/StackOverflow/Controllers/SearchController/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

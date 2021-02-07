@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: BaseTableViewController, BaseTableViewProtocol {
+final class SearchViewController: BaseTableViewController {
 
     lazy var viewModel = SearchViewModel()
     var isSearching = false
@@ -16,13 +16,14 @@ final class SearchViewController: BaseTableViewController, BaseTableViewProtocol
         super.viewDidLoad()
         bindToViewModel()
         layoutViews()
+        registerTableDelegates()
         registerSearchBarDelegates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nolineNavigationBar()
-        navigationItem.searchController = baseSearchController
+        navigationItem.titleView = baseSearchBar
     }
     
     func layoutViews() {
@@ -30,21 +31,15 @@ final class SearchViewController: BaseTableViewController, BaseTableViewProtocol
         baseTableView.constrain(to: view)
     }
     
-    @objc func registerTableViewCells() {
-        baseTableView.register(SearchResultsCell.self,
-                               forCellReuseIdentifier: SearchResultsCell.identifier)
-    }
-    
-    func registerDelegates() {
+    func registerTableDelegates() {
         baseTableView.dataSource = self
         baseTableView.delegate = self
     }
     
     func registerSearchBarDelegates() {
-        baseSearchController.searchBar.placeholder = searchBarPlaceHolderText
-        baseSearchController.searchBar.delegate = self
-        baseSearchController.searchBar.searchTextField.delegate = self
-        baseSearchController.searchResultsUpdater = self
+        baseSearchBar.placeholder = searchBarPlaceHolderText
+        baseSearchBar.delegate = self
+        baseSearchBar.searchTextField.delegate = self
     }
 }
 
