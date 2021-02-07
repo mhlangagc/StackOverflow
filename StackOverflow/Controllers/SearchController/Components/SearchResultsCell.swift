@@ -100,7 +100,7 @@ final class SearchResultsCell: BaseTableCell {
         addSubview(voteAnswersViewStackView)
         addSubview(titleStackView)
         
-        voteAnswersViewStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: Layout.spacing20).isActive = true
+        voteAnswersViewStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -Layout.spacing40).isActive = true
         voteAnswersViewStackView.centerYAnchor ->> centerYAnchor
         
         titleStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: Layout.spacing18).isActive = true
