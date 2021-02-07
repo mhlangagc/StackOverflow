@@ -116,6 +116,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C607DD1725CFF8950025C4C0 /* URLCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = URLCenter;
+			sourceTree = "<group>";
+		};
+		C607DD1825CFF8D50025C4C0 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				C6AC7A6B25CFF34600C73D75 /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
 		C65EF37325CFF6E300D8A310 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +212,8 @@
 		C6AC79D925CFEAD800C73D75 /* StackNetworkController */ = {
 			isa = PBXGroup;
 			children = (
-				C6AC7A6B25CFF34600C73D75 /* Observable.swift */,
+				C607DD1725CFF8950025C4C0 /* URLCenter */,
+				C607DD1825CFF8D50025C4C0 /* Observable */,
 			);
 			path = StackNetworkController;
 			sourceTree = "<group>";
