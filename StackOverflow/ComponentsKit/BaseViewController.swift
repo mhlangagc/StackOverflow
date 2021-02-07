@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 import SafariServices
 import SystemConfiguration
-
+/*
 class BaseViewController: UIViewController {
     
     lazy var coordinator = resolve(StackCoordinator.self)
     let generator = UINotificationFeedbackGenerator()
     
     // MARK: Reachability
-    let reachability = SCNetworkReachabilityCreateWithName(nil, "https://cityone.app")
+    let reachability = SCNetworkReachabilityCreateWithName(nil, "https://stackoverflow.com/")
     
     lazy var activityIndicatorView: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView()
@@ -95,4 +95,4 @@ class BaseViewController: UIViewController {
     }
     
 }
-
+*/

@@ -16,10 +16,4 @@ final class StackCoordinator: StackCoordinatorProtocol {
         
     }
     
-    func showSearchViewController(from navigationController: UINavigationController?) {
-        let searchViewController = SearchViewController()
-        navigationController?.pushViewController(searchViewController, animated: true)
-    }
-
-
 }

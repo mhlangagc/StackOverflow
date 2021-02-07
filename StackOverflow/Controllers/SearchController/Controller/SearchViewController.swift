@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: BaseViewController {
+final class SearchViewController: UIViewController {
 
     lazy var viewModel = SearchViewModel()
     
