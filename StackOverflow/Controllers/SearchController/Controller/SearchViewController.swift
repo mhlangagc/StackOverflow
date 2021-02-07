@@ -7,13 +7,18 @@
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: BaseViewController {
 
     lazy var viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colour.primary
+        view.backgroundColor = Colour.pale
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nolineNavigationBar()
     }
 
 }

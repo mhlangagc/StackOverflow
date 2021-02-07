@@ -10,7 +10,7 @@ import UIKit
 final class Colour {
     
     //  Black & White
-    static let pale         = Colour.hexToUIColor("8F8E64")
+    static let pale         = Colour.hexToUIColor("EDEDED")
     static let lightGrey    = Colour.hexToUIColor("8F8E64")
     static let grey         = Colour.hexToUIColor("727272")
     static let black        = Colour.hexToUIColor("000000")

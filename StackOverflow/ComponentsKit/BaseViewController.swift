@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import SafariServices
 import SystemConfiguration
-/*
-class BaseViewController: UIViewController {
+
+public class BaseViewController: UIViewController {
     
     lazy var coordinator = resolve(StackCoordinator.self)
     let generator = UINotificationFeedbackGenerator()
@@ -26,7 +26,7 @@ class BaseViewController: UIViewController {
         return loader
     }()
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colour.white
         checkNetworkReachability()
@@ -95,4 +95,3 @@ class BaseViewController: UIViewController {
     }
     
 }
-*/

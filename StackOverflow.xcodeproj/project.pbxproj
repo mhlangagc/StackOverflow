@@ -48,6 +48,7 @@
 		C6AC7A6C25CFF34600C73D75 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A6B25CFF34600C73D75 /* Observable.swift */; };
 		C6AC7A7425CFF38B00C73D75 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A7325CFF38B00C73D75 /* AlertController.swift */; };
 		C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */; };
+		C6C5E92725D0221E003FE946 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		C6AC7A6B25CFF34600C73D75 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C6AC7A7325CFF38B00C73D75 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
+		C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 				C6AC7A3825CFF0C900C73D75 /* BaseViewController.swift */,
 				C6AC7A3D25CFF0D500C73D75 /* BaseTableViewCell.swift */,
 				C6AC7A4F25CFF17C00C73D75 /* BaseView.swift */,
+				C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */,
 			);
 			path = ComponentsKit;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				C6109A6425D00F0A00115681 /* NetworkResponseHandlerProtocol.swift in Sources */,
 				C6109A4025D000A800115681 /* HTTPHeader.swift in Sources */,
 				C6AC79F825CFEC4400C73D75 /* SearchResultsCell.swift in Sources */,
+				C6C5E92725D0221E003FE946 /* BaseNavigationController.swift in Sources */,
 				C653DC9925D01CA100F67F9B /* User.swift in Sources */,
 				C6AC7A1B25CFED5C00C73D75 /* StackCoordinator.swift in Sources */,
 				C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */,
