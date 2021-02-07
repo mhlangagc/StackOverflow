@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
 		C6AC79A525CFE8C800C73D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AC79A425CFE8C800C73D75 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C65EF37325CFF6E300D8A310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C6AC798F25CFE8C600C73D75 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +282,7 @@
 		C6AC79E525CFEBC900C73D75 /* SearchController */ = {
 			isa = PBXGroup;
 			children = (
+				C65EF37325CFF6E300D8A310 /* Model */,
 				C6AC79F625CFEBFC00C73D75 /* ViewModel */,
 				C6AC79EE25CFEBED00C73D75 /* Controller */,
 				C6AC79F525CFEBF700C73D75 /* Components */,
@@ -300,6 +310,7 @@
 		C6AC79F625CFEBFC00C73D75 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -505,6 +516,7 @@
 				C6AC7A1B25CFED5C00C73D75 /* StackCoordinator.swift in Sources */,
 				C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */,
 				C6AC7A0B25CFECC700C73D75 /* StringsFile.swift in Sources */,
+				C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */,
 				C6AC7A6625CFF2A700C73D75 /* Layout.swift in Sources */,
 				C6AC7A1625CFED4E00C73D75 /* StackCoordinatorProtocol.swift in Sources */,
 				C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */,
