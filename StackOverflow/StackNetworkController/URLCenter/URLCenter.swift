@@ -7,9 +7,18 @@
 
 import Foundation
 
-final class URLCenter {
+@frozen enum BaseURL {
+    case stackOverFlow(urlPath: String)
     
-    static let shared = URLCenter()
-
-    
+    public func buildURL() -> String {
+        switch self {
+        case .stackOverFlow(let urlPath):
+            guard let `protocol` = BundleConstants.protocol.fetchValue(),
+                  let uri = BundleConstants.stackOverFlow.fetchValue() else {
+                return ""
+            }
+            return "\(`protocol`)://\(uri)/\(urlPath)"
+        }
+        
+    }
 }
