@@ -28,12 +28,36 @@ public class BaseViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colour.white
+        view.backgroundColor = Colour.pale
         checkNetworkReachability()
+        registerTableViewCells()
     }
     
-    // MARK: Check Reachability
-    private func checkNetworkReachability() {
+    @objc func registerTableViewCells() {
+        
+    }
+
+    func loadingAnimation() {
+        self.view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.centerXAnchor ->> view.centerXAnchor
+        activityIndicatorView.centerYAnchor ->> view.centerYAnchor
+        activityIndicatorView.height(30.0)
+        activityIndicatorView.width(30.0)
+    }
+    
+    func showAlertController(title: String, description: String) {
+        AlertController.showAlert(presenter: self,
+                                  title: title,
+                                  message: description)
+    }
+
+}
+
+// MARK: Reachability
+extension BaseViewController {
+    
+    fileprivate func checkNetworkReachability() {
         var flags = SCNetworkReachabilityFlags()
         
         guard let reachability = self.reachability else { return }
@@ -52,7 +76,7 @@ public class BaseViewController: UIViewController {
         }
     }
     
-    private func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
+    fileprivate func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
         let isReachable = flags.contains(.reachable)
         let needsConnection = flags.contains(.connectionRequired)
         let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
@@ -61,9 +85,7 @@ public class BaseViewController: UIViewController {
     }
     
     @objc func reachabilityChanged(note: Notification) {
-        
         guard let reachability = note.object as? Reachability else { return }
-        
         switch reachability.connection {
         case .wifi:
             debugLog("Reachable via WiFi")
@@ -73,25 +95,11 @@ public class BaseViewController: UIViewController {
             debugLog("Network not reachable")
         }
     }
-    
-    
-    func loadingAnimation() {
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
-        activityIndicatorView.centerXAnchor ->> view.centerXAnchor
-        activityIndicatorView.centerYAnchor ->> view.centerYAnchor
-        activityIndicatorView.height(30.0)
-        activityIndicatorView.width(30.0)
-    }
-    
-    func showAlertController(title: String, description: String) {
-        AlertController.showAlert(presenter: self,
-                                  title: title,
-                                  message: description)
-    }
-    
+}
+
+// MARK: Actions
+extension BaseViewController {
     @objc func handleDismiss() {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }

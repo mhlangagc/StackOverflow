@@ -17,6 +17,8 @@
 		C6109A5525D0088400115681 /* BundleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A5425D0088400115681 /* BundleConstants.swift */; };
 		C6109A6425D00F0A00115681 /* NetworkResponseHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A6325D00F0A00115681 /* NetworkResponseHandlerProtocol.swift */; };
 		C6109A6A25D0105000115681 /* SearchNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A6925D0105000115681 /* SearchNetworkController.swift */; };
+		C619522725D0265F00B751BF /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C619522625D0265F00B751BF /* SearchViewController+TableView.swift */; };
+		C619522C25D0269B00B751BF /* SearchViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C619522B25D0269B00B751BF /* SearchViewController+Network.swift */; };
 		C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */; };
 		C653DC8225D014FF00F67F9B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC8125D014FF00F67F9B /* SearchResult.swift */; };
 		C653DC9125D016F200F67F9B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9025D016F200F67F9B /* Question.swift */; };
@@ -49,6 +51,7 @@
 		C6AC7A7425CFF38B00C73D75 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A7325CFF38B00C73D75 /* AlertController.swift */; };
 		C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */; };
 		C6C5E92725D0221E003FE946 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */; };
+		C6CD253625D02B3E00C3CA0D /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,8 @@
 		C6109A5425D0088400115681 /* BundleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleConstants.swift; sourceTree = "<group>"; };
 		C6109A6325D00F0A00115681 /* NetworkResponseHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseHandlerProtocol.swift; sourceTree = "<group>"; };
 		C6109A6925D0105000115681 /* SearchNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkController.swift; sourceTree = "<group>"; };
+		C619522625D0265F00B751BF /* SearchViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+TableView.swift"; sourceTree = "<group>"; };
+		C619522B25D0269B00B751BF /* SearchViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Network.swift"; sourceTree = "<group>"; };
 		C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkProtocol.swift; sourceTree = "<group>"; };
 		C653DC8125D014FF00F67F9B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		C653DC9025D016F200F67F9B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 		C6AC7A7325CFF38B00C73D75 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				C6AC7A3825CFF0C900C73D75 /* BaseViewController.swift */,
+				C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */,
 				C6AC7A3D25CFF0D500C73D75 /* BaseTableViewCell.swift */,
 				C6AC7A4F25CFF17C00C73D75 /* BaseView.swift */,
 				C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */,
@@ -393,6 +400,8 @@
 			isa = PBXGroup;
 			children = (
 				C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */,
+				C619522B25D0269B00B751BF /* SearchViewController+Network.swift */,
+				C619522625D0265F00B751BF /* SearchViewController+TableView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -600,7 +609,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C619522C25D0269B00B751BF /* SearchViewController+Network.swift in Sources */,
 				C6AC7A3925CFF0C900C73D75 /* BaseViewController.swift in Sources */,
+				C6CD253625D02B3E00C3CA0D /* BaseTableViewController.swift in Sources */,
 				C653DC9125D016F200F67F9B /* Question.swift in Sources */,
 				C6109A5025D0077600115681 /* HTTPHeaderKeys.swift in Sources */,
 				C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */,
@@ -628,6 +639,7 @@
 				C6AC7A1625CFED4E00C73D75 /* StackCoordinatorProtocol.swift in Sources */,
 				C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */,
 				C6AC7A2125CFEDF700C73D75 /* DependencyManager.swift in Sources */,
+				C619522725D0265F00B751BF /* SearchViewController+TableView.swift in Sources */,
 				C6AC7A6C25CFF34600C73D75 /* Observable.swift in Sources */,
 				C6109A6A25D0105000115681 /* SearchNetworkController.swift in Sources */,
 				C607DD1D25CFF9200025C4C0 /* NetworkProtocol.swift in Sources */,

@@ -12,7 +12,7 @@ final class StackCoordinator: StackCoordinatorProtocol {
     
     public static let shared = StackCoordinator()
     
-    func showSearchResults(from viewController: UIViewController?) {
+    func showQuestionController(withQuestion question: Question, from viewController: UIViewController?) {
         
     }
     
