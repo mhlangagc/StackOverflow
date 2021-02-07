@@ -30,11 +30,6 @@ public class BaseViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Colour.pale
         checkNetworkReachability()
-        registerTableViewCells()
-    }
-    
-    @objc func registerTableViewCells() {
-        
     }
 
     func loadingAnimation() {
