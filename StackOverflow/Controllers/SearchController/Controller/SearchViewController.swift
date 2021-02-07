@@ -9,11 +9,12 @@ import UIKit
 
 final class SearchViewController: BaseViewController {
 
+    lazy var viewModel = SearchViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = Colour.primary
     }
-
 
 }
 

@@ -7,7 +7,6 @@
 
 import Foundation
 import SystemConfiguration
-import Foundation
 
 public enum ReachabilityError: Error {
     case failedToCreateWithAddress(sockaddr_in)

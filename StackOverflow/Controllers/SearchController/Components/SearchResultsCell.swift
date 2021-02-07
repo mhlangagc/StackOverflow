@@ -7,3 +7,10 @@
 
 import Foundation
 import UIKit 
+
+final class SearchResultsCell: BaseTableCell {
+    
+    override func configureView() {
+        super.configureView()
+    }
+}

@@ -8,8 +8,8 @@
 import Foundation
 
 @frozen enum HTTPMethod: String {
-    case POST
-    case PUT
-    case GET
-    case DELETE
+    case post   = "POST"
+    case put    = "PUT"
+    case get    = "GET"
+    case delete = "DELETE"
 }

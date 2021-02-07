@@ -41,13 +41,11 @@ public func resolve<Protocol>(_ aProtocol: Protocol.Type) -> Protocol {
     }
     
     static func registerNetworkControllers() {
-//        StackDependencyManager.shared.register( { OneBoxNetworkControllerImplementation() },
-//                                                   for: OneBoxNetworkController.self)
+        StackDependencyManager.shared.register( { SearchNetworkController() }, for: SearchNetworkProtocol.self)
     }
     
     @objc
     static func registerFlowCoordinators() {
-        StackDependencyManager.shared.register( { StackCoordinator.shared },
-                                                   for: StackCoordinatorProtocol.self)
+        StackDependencyManager.shared.register( { StackCoordinator.shared }, for: StackCoordinatorProtocol.self)
     }
 }
