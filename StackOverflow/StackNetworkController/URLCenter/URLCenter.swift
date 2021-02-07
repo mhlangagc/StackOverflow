@@ -8,11 +8,11 @@
 import Foundation
 
 @frozen enum BaseURL {
-    case stackOverFlow(urlPath: String)
+    case stackOverFlow
     
-    public func buildURL() -> String {
+    public func buildURL(urlPath: String) -> String {
         switch self {
-        case .stackOverFlow(let urlPath):
+        case .stackOverFlow:
             guard let `protocol` = BundleConstants.protocol.fetchValue(),
                   let uri = BundleConstants.stackOverFlow.fetchValue() else {
                 return ""

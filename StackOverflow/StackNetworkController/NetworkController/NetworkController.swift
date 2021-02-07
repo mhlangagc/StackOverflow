@@ -17,7 +17,7 @@ final class NetworkController: NetworkProtocol {
                                      parameters: Parameters? = [:],
                                      headers: HTTPHeaders? = nil,
                                      method: HTTPMethod,
-                                     selectedBaseURL: BaseURL = .restOfWorld,
+                                     selectedBaseURL: BaseURL = .stackOverFlow,
                                      model: Model.Type,
                                      completion: @escaping (Error?, Model?) -> Void) {
         
@@ -29,14 +29,15 @@ final class NetworkController: NetworkProtocol {
         }
         
         var request = URLRequest(url: url)
-        let jsonBody = try? JSONSerialization.data(withJSONObject: limitParameters)
-        
         request.httpMethod = method.rawValue
         request.addValue(HeaderKeys.Values.accept, forHTTPHeaderField: HeaderKeys.Name.accept)
         request.addValue(HeaderKeys.Values.contentType, forHTTPHeaderField: HeaderKeys.Name.contentType)
-        request.addValue(HeaderKeys.Values.referer, forHTTPHeaderField: HeaderKeys.Name.referer)
-        request.addValue("Bearer \(UserModel.accessToken)", forHTTPHeaderField: HeaderKeys.Name.authorization)
-        request.httpBody = jsonBody
+        
+        if !parameters?.isEmpty {
+            let jsonBody = try? JSONSerialization.data(withJSONObject: parameters)
+            request.httpBody = jsonBody
+        }
+        
         
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { _, _, error in
             
