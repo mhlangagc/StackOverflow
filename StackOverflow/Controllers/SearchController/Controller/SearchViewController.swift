@@ -23,14 +23,12 @@ final class SearchViewController: BaseViewController {
     }
     
     func layoutViews() {
-        view.addSubview(searchResultsTableView)
-        searchResultsTableView.constrain(to: view)
+        view.addSubview(baseTableView)
+        baseTableView.constrain(to: view)
     }
     
-    override func registerTableViewCells() {
-        super.registerTableViewCells()
-        searchResultsTableView.register(SearchResultsCell.self,
-                                        forCellReuseIdentifier: SearchResultsCell.identifier)
+    func BaseTableViewController() {
+        baseTableView.data
     }
 }
 

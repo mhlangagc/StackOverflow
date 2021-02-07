@@ -30,7 +30,8 @@ public class BaseTableViewController: BaseViewController, BaseTableViewProtocol 
     }
     
     @objc func registerTableViewCells() {
-        
+        baseTableView.register(SearchResultsCell.self,
+                               forCellReuseIdentifier: SearchResultsCell.identifier)
     }
     
     @objc func registerDelegates() {
