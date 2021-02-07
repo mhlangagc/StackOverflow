@@ -12,13 +12,13 @@ protocol BaseTableViewProtocol {
     func registerDelegates()
 }
 
-public class BaseTableViewController: BaseViewController, BaseTableViewProtocol {
+public class BaseTableViewController: BaseViewController {
     
     lazy var baseTableView: UITableView = {
          let tableView = UITableView(frame: .zero,
                                      style: UITableView.Style.plain)
          tableView.backgroundColor = Colour.pale
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -26,17 +26,5 @@ public class BaseTableViewController: BaseViewController, BaseTableViewProtocol 
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        registerTableViewCells()
-        registerDelegates()
     }
-    
-    @objc func registerTableViewCells() {
-        baseTableView.register(SearchResultsCell.self,
-                               forCellReuseIdentifier: SearchResultsCell.identifier)
-    }
-    
-    @objc func registerDelegates() {
-        
-    }
-
 }

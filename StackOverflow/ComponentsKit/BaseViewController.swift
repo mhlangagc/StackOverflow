@@ -25,6 +25,20 @@ public class BaseViewController: UIViewController {
         loader.translatesAutoresizingMaskIntoConstraints = false
         return loader
     }()
+    
+    lazy var baseSearchController: UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchBar.scopeButtonTitles = nil
+        search.searchBar.scopeBarBackgroundImage = nil
+        search.searchBar.backgroundImage = UIImage()
+        search.searchBar.setBackgroundImage(UIImage(named: "search-bar"),
+                                            for: UIBarPosition.bottom,
+                                            barMetrics: UIBarMetrics.default)
+        search.searchBar.barStyle = .default
+        search.searchBar.searchTextField.textColor = Colour.black
+        search.hidesNavigationBarDuringPresentation = false
+        return search
+    }()
 
     public override func viewDidLoad() {
         super.viewDidLoad()

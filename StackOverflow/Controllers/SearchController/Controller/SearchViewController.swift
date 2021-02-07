@@ -7,19 +7,22 @@
 
 import UIKit
 
-final class SearchViewController: BaseTableViewController {
+final class SearchViewController: BaseTableViewController, BaseTableViewProtocol {
 
     lazy var viewModel = SearchViewModel()
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindToViewModel()
         layoutViews()
+        registerSearchBarDelegates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nolineNavigationBar()
+        navigationItem.searchController = baseSearchController
     }
     
     func layoutViews() {
@@ -27,10 +30,21 @@ final class SearchViewController: BaseTableViewController {
         baseTableView.constrain(to: view)
     }
     
-    override func registerDelegates() {
-        super.registerDelegates()
+    @objc func registerTableViewCells() {
+        baseTableView.register(SearchResultsCell.self,
+                               forCellReuseIdentifier: SearchResultsCell.identifier)
+    }
+    
+    func registerDelegates() {
         baseTableView.dataSource = self
         baseTableView.delegate = self
+    }
+    
+    func registerSearchBarDelegates() {
+        baseSearchController.searchBar.placeholder = searchBarPlaceHolderText
+        baseSearchController.searchBar.delegate = self
+        baseSearchController.searchBar.searchTextField.delegate = self
+        baseSearchController.searchResultsUpdater = self
     }
 }
 
@@ -39,4 +53,9 @@ extension SearchViewController {
     func showQuestionController(with question: Question) {
         coordinator.showQuestionController(withQuestion: question, from: self)
     }
+}
+
+// MARK: Localisation
+extension SearchViewController {
+    var searchBarPlaceHolderText: String { Localizable.localized(key: "Search")}
 }

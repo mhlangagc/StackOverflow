@@ -10,7 +10,7 @@ import UIKit
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.searchResults.value?.count ?? 0
+        return 10 //viewModel.searchResults.value?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,13 +18,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
               let question = viewModel.searchResults.value else {
             return UITableViewCell()
         }
-        searchCell.question = question[indexPath.row]
+        //searchCell.question = question[indexPath.row]
         return searchCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let question = viewModel.searchResults.value?[indexPath.row] else { return }
-        showQuestionController(with: question)
+//        guard let question = viewModel.searchResults.value?[indexPath.row] else { return }
+//        showQuestionController(with: question)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Layout.spacing80
     }
 }
