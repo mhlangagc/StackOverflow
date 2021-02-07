@@ -9,9 +9,9 @@ import Foundation
 
 typealias Parameters = [String: Any]
 
-final class NetworkController: NetworkProtocol {
+final class APIKit: APIKitProtocol {
     
-    static let shared = NetworkController()
+    static let shared = APIKit()
     
     func fetchData<Model: Decodable>(forPath path: String,
                                      parameters: Parameters? = [:],
@@ -19,7 +19,7 @@ final class NetworkController: NetworkProtocol {
                                      method: HTTPMethod,
                                      selectedBaseURL: URLCenter = .stackOverFlow,
                                      model: Model.Type,
-                                     completion: @escaping (Error?, Model?) -> Void) {
+                                     completion: @escaping (NetworkError?, Model?) -> Void) {
         
         let urlPath = selectedBaseURL.buildURL(urlPath: path)
         guard let encodedURL: String = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -41,13 +41,28 @@ final class NetworkController: NetworkProtocol {
         
         
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { _, _, error in
-            
+           
             if let err = error {
-                let failure = Failure(error: err)
-                completion(.failure(failure))
+                completion(NetworkError.custom(err.localizedDescription), nil)
                 return
             }
-            completion(.success(true))
+            
+            /*
+            guard let responseData = response.data else {
+                completion(nil, ServiceError.custom("Reponse Data Missing from Response: \(response)"))
+                return
+            }
+      
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(Model.self, from: responseData)
+                debugLog("Data Result from URL: \(url). Expected Model: \(model). Response: \(responseData)")
+                completion(responseData, nil)
+            } catch let error as NSError {
+                debugLog("Error Fetching Data from \(model). Error: \(error)")
+                completion(nil, ServiceError.custom(error.localizedDescription))
+            }
+            */
         })
         task.resume()
         

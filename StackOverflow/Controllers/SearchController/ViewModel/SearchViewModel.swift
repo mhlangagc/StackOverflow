@@ -8,29 +8,28 @@
 import Foundation
 
 public class BaseViewModel {
-    lazy var networkController = resolve(NetworkController.self)
+    lazy var networkController = resolve(SearchNetworkController.self)
 }
 
 final class SearchViewModel: BaseViewModel {
     
-    var searchResults = Observable<[Product]>([])
-    var errorBlock: ((ServiceError) -> Swift.Void)?
+    var searchResults = Observable<[Question]>([])
+    var errorBlock: ((NetworkError) -> Swift.Void)?
     
     func searchWithQuery(_ query: String) {
         
         if query.isEmpty { return }
-        let loadFavouritesSemaphore = DispatchSemaphore(value: 0)
+        let loadSearchResultsSemaphore = DispatchSemaphore(value: 0)
         
-        networkController.searchForProducts(withQuery: query, always: {
-            loadFavouritesSemaphore.signal()
-        }, onSuccess: { (productResults) in
-            self.productResults.value = productResults
-            self.searchProtocol?.onFetchSearchResults()
+        networkController.searchForAnswers(withQuery: query, always: {
+            loadSearchResultsSemaphore.signal()
+        }, onSuccess: { (searchResults) in
+            self.searchResults.value = searchResults.questions
         }) { (error) in
             self.errorBlock?(error)
         }
 
-        loadFavouritesSemaphore.wait(timeout: .distantFuture)
+        loadSearchResultsSemaphore.wait(timeout: .distantFuture)
     }
     
 }

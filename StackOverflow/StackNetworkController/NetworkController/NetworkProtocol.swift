@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol NetworkProtocol: NetworkController {
+protocol APIKitProtocol: APIKit {
     func fetchData<Model: Decodable>(forPath path: String,
                                      parameters: Parameters?,
                                      headers: HTTPHeaders?,
                                      method: HTTPMethod,
                                      selectedBaseURL: URLCenter,
                                      model: Model.Type,
-                                     completion: @escaping (Error?, Model?) -> Void)
+                                     completion: @escaping (NetworkError?, Model?) -> Void)
 }

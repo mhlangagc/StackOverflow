@@ -17,6 +17,11 @@
 		C6109A5025D0077600115681 /* HTTPHeaderKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A4F25D0077600115681 /* HTTPHeaderKeys.swift */; };
 		C6109A5525D0088400115681 /* BundleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A5425D0088400115681 /* BundleConstants.swift */; };
 		C6109A6425D00F0A00115681 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A6325D00F0A00115681 /* ResponseHandler.swift */; };
+		C6109A6A25D0105000115681 /* SearchNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A6925D0105000115681 /* SearchNetworkController.swift */; };
+		C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */; };
+		C653DC8225D014FF00F67F9B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC8125D014FF00F67F9B /* SearchResult.swift */; };
+		C653DC9125D016F200F67F9B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9025D016F200F67F9B /* Question.swift */; };
+		C653DC9925D01CA100F67F9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9825D01CA100F67F9B /* User.swift */; };
 		C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
@@ -75,6 +80,11 @@
 		C6109A4F25D0077600115681 /* HTTPHeaderKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderKeys.swift; sourceTree = "<group>"; };
 		C6109A5425D0088400115681 /* BundleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleConstants.swift; sourceTree = "<group>"; };
 		C6109A6325D00F0A00115681 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		C6109A6925D0105000115681 /* SearchNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkController.swift; sourceTree = "<group>"; };
+		C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkProtocol.swift; sourceTree = "<group>"; };
+		C653DC8125D014FF00F67F9B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		C653DC9025D016F200F67F9B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		C653DC9825D01CA100F67F9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +170,6 @@
 			children = (
 				C607DD1C25CFF9200025C4C0 /* NetworkProtocol.swift */,
 				C607DD2125CFF9500025C4C0 /* NetworkController.swift */,
-				C6109A6325D00F0A00115681 /* ResponseHandler.swift */,
 			);
 			path = NetworkController;
 			sourceTree = "<group>";
@@ -180,9 +189,29 @@
 			path = BundleConstants;
 			sourceTree = "<group>";
 		};
+		C6109A6825D0103D00115681 /* SearchNetworkController */ = {
+			isa = PBXGroup;
+			children = (
+				C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */,
+				C6109A6925D0105000115681 /* SearchNetworkController.swift */,
+			);
+			path = SearchNetworkController;
+			sourceTree = "<group>";
+		};
+		C6109A7125D0111500115681 /* NetworkResponseHandlerProtcol */ = {
+			isa = PBXGroup;
+			children = (
+				C6109A6325D00F0A00115681 /* ResponseHandler.swift */,
+			);
+			path = NetworkResponseHandlerProtcol;
+			sourceTree = "<group>";
+		};
 		C65EF37325CFF6E300D8A310 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C653DC8125D014FF00F67F9B /* SearchResult.swift */,
+				C653DC9025D016F200F67F9B /* Question.swift */,
+				C653DC9825D01CA100F67F9B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +293,7 @@
 				C607DD2A25CFFB2D0025C4C0 /* Error */,
 				C607DD1725CFF8950025C4C0 /* URLCenter */,
 				C607DD1825CFF8D50025C4C0 /* Observable */,
+				C6109A7125D0111500115681 /* NetworkResponseHandlerProtcol */,
 				C607DD2625CFFAA30025C4C0 /* NetworkController */,
 				C607DD3325CFFDAB0025C4C0 /* HTTPMethod.swift */,
 				C6109A3F25D000A800115681 /* HTTPHeader.swift */,
@@ -353,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				C65EF37325CFF6E300D8A310 /* Model */,
+				C6109A6825D0103D00115681 /* SearchNetworkController */,
 				C6AC79F625CFEBFC00C73D75 /* ViewModel */,
 				C6AC79EE25CFEBED00C73D75 /* Controller */,
 				C6AC79F525CFEBF700C73D75 /* Components */,
@@ -573,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6AC7A3925CFF0C900C73D75 /* BaseViewController.swift in Sources */,
+				C653DC9125D016F200F67F9B /* Question.swift in Sources */,
 				C6109A5025D0077600115681 /* HTTPHeaderKeys.swift in Sources */,
 				C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */,
 				C6AC7A2625CFEE8700C73D75 /* DispatchOnMainThread.swift in Sources */,
@@ -589,8 +621,11 @@
 				C6109A6425D00F0A00115681 /* ResponseHandler.swift in Sources */,
 				C6109A4025D000A800115681 /* HTTPHeader.swift in Sources */,
 				C6AC79F825CFEC4400C73D75 /* SearchResultsCell.swift in Sources */,
+				C653DC9925D01CA100F67F9B /* User.swift in Sources */,
 				C6AC7A1B25CFED5C00C73D75 /* StackCoordinator.swift in Sources */,
+				C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */,
 				C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */,
+				C653DC8225D014FF00F67F9B /* SearchResult.swift in Sources */,
 				C6AC7A0B25CFECC700C73D75 /* StringsFile.swift in Sources */,
 				C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */,
 				C6AC7A6625CFF2A700C73D75 /* Layout.swift in Sources */,
@@ -598,6 +633,7 @@
 				C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */,
 				C6AC7A2125CFEDF700C73D75 /* DependencyManager.swift in Sources */,
 				C6AC7A6C25CFF34600C73D75 /* Observable.swift in Sources */,
+				C6109A6A25D0105000115681 /* SearchNetworkController.swift in Sources */,
 				C607DD1D25CFF9200025C4C0 /* NetworkProtocol.swift in Sources */,
 				C6AC7A0025CFEC6300C73D75 /* Localisable.swift in Sources */,
 				C607DD3425CFFDAB0025C4C0 /* HTTPMethod.swift in Sources */,
