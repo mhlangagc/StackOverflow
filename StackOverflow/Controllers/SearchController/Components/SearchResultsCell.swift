@@ -10,9 +10,17 @@ import UIKit
 
 final class SearchResultsCell: BaseTableCell {
     
+    lazy var questionAnsweredImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.font = Font.regular14
         label.textColor = Colour.primary
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +29,7 @@ final class SearchResultsCell: BaseTableCell {
     
     lazy var authorLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 10.0, weight: .regular)
+        label.font = Font.regular10
         label.textColor = Colour.grey
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,11 +37,34 @@ final class SearchResultsCell: BaseTableCell {
     
     lazy var votesLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 10.0, weight: .regular)
+        label.font = Font.regular10
         label.textColor = Colour.grey
-        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var answerLabel: UILabel = {
+        let label = UILabel()
+        label.font = Font.regular10
+        label.textColor = Colour.grey
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var viewsLabel: UILabel = {
+        let label = UILabel()
+        label.font = Font.regular10
+        label.textColor = Colour.grey
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var disclosureIndicatorImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     var question: Question? {
