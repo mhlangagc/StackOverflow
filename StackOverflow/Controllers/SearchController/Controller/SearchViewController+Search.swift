@@ -10,6 +10,7 @@ import UIKit
 extension SearchViewController: UISearchBarDelegate, UITextFieldDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        baseSearchBar.showsCancelButton = true
         isSearching = true
         return isSearching
     }
@@ -28,8 +29,9 @@ extension SearchViewController: UISearchBarDelegate, UITextFieldDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearching = false
+        baseSearchBar.showsCancelButton = false
         viewModel.searchResults.value?.removeAll()
-        view.endEditing(true)
+        self.resignFirstResponder()
     }
     
 }

@@ -5,3 +5,6 @@
   Created by Gugulethu on 2021/02/07.
   
 */
+
+"SEARCH" = "Search";
+"STACK_OVERFLOW_SEARCH" = "Stack Overflow Search";

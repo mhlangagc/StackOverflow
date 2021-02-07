@@ -18,13 +18,18 @@ final class SearchViewController: BaseTableViewController {
         layoutViews()
         registerTableDelegates()
         registerSearchBarDelegates()
+        setupEmptyTableView()
+    }
+    
+    private func setupEmptyTableView() {
+        stackOverflowSearchLabel.text = stackOverFlowSearchText
+        baseTableView.backgroundView = stackOverflowSearchLabel
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nolineNavigationBar()
         navigationItem.titleView = baseSearchBar
-        //configureSearchBarBackgroundColour()
     }
     
     func layoutViews() {
@@ -41,7 +46,6 @@ final class SearchViewController: BaseTableViewController {
         baseSearchBar.placeholder = searchBarPlaceHolderText
         baseSearchBar.delegate = self
         baseSearchBar.searchTextField.delegate = self
-        baseSearchBar.searchTextField.backgroundColor = .white
     }
 }
 
@@ -54,5 +58,6 @@ extension SearchViewController {
 
 // MARK: Localisation
 extension SearchViewController {
-    var searchBarPlaceHolderText: String { Localizable.localized(key: "Search")}
+    var searchBarPlaceHolderText: String { Localizable.localized(key: "SEARCH")}
+    var stackOverFlowSearchText: String { Localizable.localized(key: "STACK_OVERFLOW_SEARCH")}
 }
