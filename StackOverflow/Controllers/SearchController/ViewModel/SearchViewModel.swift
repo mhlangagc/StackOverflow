@@ -7,17 +7,14 @@
 
 import Foundation
 
-final class SearchViewModel {
+public class BaseViewModel {
+    lazy var networkController = resolve(NetworkController.self)
+}
+
+final class SearchViewModel: BaseViewModel {
     
-    var productResults = Observable<[Product]>([])
-    var departments = Observable<[DepartmentModel]>([])
+    var searchResults = Observable<[Product]>([])
     var errorBlock: ((ServiceError) -> Swift.Void)?
-    
-    var searchProtocol: SearchMasterController?
-    var searchResultsErrorBlock: ((ServiceError) -> Swift.Void)?
-    
-    private lazy var networkController: FirebaseNetworkController = FirebaseNetworkControllerImplementation.shared
-    private lazy var oneBoxNetworkController = resolve(OneBoxNetworkController.self)
     
     func searchWithQuery(_ query: String) {
         
@@ -30,7 +27,7 @@ final class SearchViewModel {
             self.productResults.value = productResults
             self.searchProtocol?.onFetchSearchResults()
         }) { (error) in
-            self.searchResultsErrorBlock?(error)
+            self.errorBlock?(error)
         }
 
         loadFavouritesSemaphore.wait(timeout: .distantFuture)
