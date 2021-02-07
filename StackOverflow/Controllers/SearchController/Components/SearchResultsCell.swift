@@ -10,6 +10,12 @@ import UIKit
 
 final class SearchResultsCell: BaseTableCell {
     
+    var question: Question? {
+        didSet {
+            guard let question = question else { return }
+        }
+    }
+    
     override func configureView() {
         super.configureView()
     }

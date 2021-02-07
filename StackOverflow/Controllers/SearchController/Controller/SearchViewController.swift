@@ -7,14 +7,57 @@
 
 import UIKit
 
-final class SearchViewController: BaseViewController {
+final class SearchViewController: BaseTableViewController {
 
     lazy var viewModel = SearchViewModel()
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colour.primary
+        bindToViewModel()
+        layoutViews()
+        registerTableDelegates()
+        registerSearchBarDelegates()
+        setupEmptyTableView()
     }
-
+    
+    private func setupEmptyTableView() {
+        stackOverflowSearchLabel.text = stackOverFlowSearchText
+        baseTableView.backgroundView = stackOverflowSearchLabel
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nolineNavigationBar()
+        navigationItem.titleView = baseSearchBar
+    }
+    
+    func layoutViews() {
+        view.addSubview(baseTableView)
+        baseTableView.constrain(to: view)
+    }
+    
+    func registerTableDelegates() {
+        baseTableView.dataSource = self
+        baseTableView.delegate = self
+    }
+    
+    func registerSearchBarDelegates() {
+        baseSearchBar.placeholder = searchBarPlaceHolderText
+        baseSearchBar.delegate = self
+        baseSearchBar.searchTextField.delegate = self
+    }
 }
 
+// MARK: Navigation
+extension SearchViewController {
+    func showQuestionController(with question: Question) {
+        coordinator.showQuestionController(withQuestion: question, from: self)
+    }
+}
+
+// MARK: Localisation
+extension SearchViewController {
+    var searchBarPlaceHolderText: String { Localizable.localized(key: "SEARCH")}
+    var stackOverFlowSearchText: String { Localizable.localized(key: "STACK_OVERFLOW_SEARCH")}
+}

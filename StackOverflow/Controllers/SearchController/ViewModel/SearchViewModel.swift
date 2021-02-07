@@ -8,7 +8,7 @@
 import Foundation
 
 public class BaseViewModel {
-    lazy var networkController = resolve(SearchNetworkController.self)
+    lazy var networkController = resolve(SearchNetworkProtocol.self)
 }
 
 final class SearchViewModel: BaseViewModel {

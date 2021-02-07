@@ -39,7 +39,6 @@ final class APIKit: APIKitProtocol {
             }
         }
         
-        
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { _, _, error in
            
             if let err = error {

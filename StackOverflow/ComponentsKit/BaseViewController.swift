@@ -10,13 +10,13 @@ import UIKit
 import SafariServices
 import SystemConfiguration
 
-class BaseViewController: UIViewController {
+public class BaseViewController: UIViewController {
     
     lazy var coordinator = resolve(StackCoordinator.self)
     let generator = UINotificationFeedbackGenerator()
     
     // MARK: Reachability
-    let reachability = SCNetworkReachabilityCreateWithName(nil, "https://cityone.app")
+    let reachability = SCNetworkReachabilityCreateWithName(nil, "https://stackoverflow.com/")
     
     lazy var activityIndicatorView: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView()
@@ -25,15 +25,53 @@ class BaseViewController: UIViewController {
         loader.translatesAutoresizingMaskIntoConstraints = false
         return loader
     }()
+    
+    lazy var baseSearchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.barStyle = .default
+        searchBar.backgroundColor = Colour.primary
+        searchBar.searchTextField.backgroundColor = .white
+        searchBar.frame = .zero
+        searchBar.scopeButtonTitles = nil
+        searchBar.scopeBarBackgroundImage = nil
+        searchBar.backgroundImage = UIImage()
+        searchBar.setBackgroundImage(UIImage(named: "ic_search_bar"),
+                                     for: .bottom,
+                                     barMetrics: .default)
+        return searchBar
+    }()
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colour.white
+        view.backgroundColor = Colour.pale
         checkNetworkReachability()
     }
+
+    func loadingAnimation() {
+        self.view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.centerXAnchor ->> view.centerXAnchor
+        activityIndicatorView.centerYAnchor ->> view.centerYAnchor
+        activityIndicatorView.height(30.0)
+        activityIndicatorView.width(30.0)
+    }
     
-    // MARK: Check Reachability
-    private func checkNetworkReachability() {
+    func showAlertController(title: String, description: String) {
+        AlertController.showAlert(presenter: self,
+                                  title: title,
+                                  message: description)
+    }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+}
+
+// MARK: Reachability
+extension BaseViewController {
+    
+    fileprivate func checkNetworkReachability() {
         var flags = SCNetworkReachabilityFlags()
         
         guard let reachability = self.reachability else { return }
@@ -52,7 +90,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    private func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
+    fileprivate func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
         let isReachable = flags.contains(.reachable)
         let needsConnection = flags.contains(.connectionRequired)
         let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
@@ -61,9 +99,7 @@ class BaseViewController: UIViewController {
     }
     
     @objc func reachabilityChanged(note: Notification) {
-        
         guard let reachability = note.object as? Reachability else { return }
-        
         switch reachability.connection {
         case .wifi:
             debugLog("Reachable via WiFi")
@@ -73,26 +109,11 @@ class BaseViewController: UIViewController {
             debugLog("Network not reachable")
         }
     }
-    
-    
-    func loadingAnimation() {
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
-        activityIndicatorView.centerXAnchor ->> view.centerXAnchor
-        activityIndicatorView.centerYAnchor ->> view.centerYAnchor
-        activityIndicatorView.height(30.0)
-        activityIndicatorView.width(30.0)
-    }
-    
-    func showAlertController(title: String, description: String) {
-        AlertController.showAlert(presenter: self,
-                                  title: title,
-                                  message: description)
-    }
-    
+}
+
+// MARK: Actions
+extension BaseViewController {
     @objc func handleDismiss() {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
-

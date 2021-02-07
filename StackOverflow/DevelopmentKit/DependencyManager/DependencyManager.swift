@@ -42,6 +42,7 @@ public func resolve<Protocol>(_ aProtocol: Protocol.Type) -> Protocol {
     
     static func registerNetworkControllers() {
         StackDependencyManager.shared.register( { SearchNetworkController() }, for: SearchNetworkProtocol.self)
+        StackDependencyManager.shared.register( { SearchNetworkController() }, for: SearchNetworkProtocol.self)
     }
     
     @objc

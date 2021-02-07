@@ -12,14 +12,8 @@ final class StackCoordinator: StackCoordinatorProtocol {
     
     public static let shared = StackCoordinator()
     
-    func showSearchResults(from viewController: UIViewController?) {
+    func showQuestionController(withQuestion question: Question, from viewController: UIViewController?) {
         
     }
     
-    func showSearchViewController(from navigationController: UINavigationController?) {
-        let searchViewController = SearchViewController()
-        navigationController?.pushViewController(searchViewController, animated: true)
-    }
-
-
 }
