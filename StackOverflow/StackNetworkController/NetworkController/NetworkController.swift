@@ -14,7 +14,6 @@ final class NetworkController: NetworkProtocol {
     static let shared = NetworkController()
     
     func fetchData<Model: Decodable>(forPath path: String,
-                                     alternativeStringPath: String? = nil,
                                      parameters: Parameters? = [:],
                                      headers: HTTPHeaders? = nil,
                                      method: HTTPMethod,
