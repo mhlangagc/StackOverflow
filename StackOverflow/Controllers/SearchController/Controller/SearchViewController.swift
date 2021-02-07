@@ -24,6 +24,7 @@ final class SearchViewController: BaseTableViewController {
         super.viewWillAppear(animated)
         nolineNavigationBar()
         navigationItem.titleView = baseSearchBar
+        //configureSearchBarBackgroundColour()
     }
     
     func layoutViews() {
@@ -40,6 +41,7 @@ final class SearchViewController: BaseTableViewController {
         baseSearchBar.placeholder = searchBarPlaceHolderText
         baseSearchBar.delegate = self
         baseSearchBar.searchTextField.delegate = self
+        baseSearchBar.searchTextField.backgroundColor = .white
     }
 }
 

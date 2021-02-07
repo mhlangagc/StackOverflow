@@ -34,7 +34,7 @@ public class BaseViewController: UIViewController {
         searchBar.scopeButtonTitles = nil
         searchBar.scopeBarBackgroundImage = nil
         searchBar.backgroundImage = UIImage()
-        searchBar.setBackgroundImage(UIImage(named: "search-bar"),
+        searchBar.setBackgroundImage(UIImage(named: "ic_search_bar"),
                                      for: .bottom,
                                      barMetrics: .default)
         return searchBar
