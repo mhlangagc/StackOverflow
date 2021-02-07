@@ -11,18 +11,6 @@ final class SearchViewController: BaseViewController {
 
     lazy var viewModel = SearchViewModel()
     
-    lazy var searchResultsTableView: UITableView = {
-         let tableView = UITableView(frame: .zero,
-                                     style: UITableView.Style.plain)
-         tableView.backgroundColor = Colour.pale
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindToViewModel()

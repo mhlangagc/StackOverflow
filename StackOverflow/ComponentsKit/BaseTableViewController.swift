@@ -11,6 +11,18 @@ import SafariServices
 import SystemConfiguration
 
 public class BaseTableViewController: BaseViewController {
+    
+    lazy var baseTableView: UITableView = {
+         let tableView = UITableView(frame: .zero,
+                                     style: UITableView.Style.plain)
+         tableView.backgroundColor = Colour.pale
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,54 +48,4 @@ public class BaseTableViewController: BaseViewController {
                                   message: description)
     }
 
-}
-
-// MARK: Reachability
-extension BaseViewController {
-    
-    fileprivate func checkNetworkReachability() {
-        var flags = SCNetworkReachabilityFlags()
-        
-        guard let reachability = self.reachability else { return }
-        SCNetworkReachabilityGetFlags(reachability, &flags)
-        
-        if (isNetworkReachable(with: flags)) {
-            if flags.contains(.isWWAN) {
-                // Network Reachable via Mobile Data
-                return
-            }
-            //  Network Reachable via Wifi
-        } else if (!isNetworkReachable(with: flags)) {
-            self.showAlertController(title: "Network Unavailable",
-                                     description: "Looks like you're offline. Please check your network and try again.")
-            return
-        }
-    }
-    
-    fileprivate func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
-        let isReachable = flags.contains(.reachable)
-        let needsConnection = flags.contains(.connectionRequired)
-        let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
-        let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
-        return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
-    }
-    
-    @objc func reachabilityChanged(note: Notification) {
-        guard let reachability = note.object as? Reachability else { return }
-        switch reachability.connection {
-        case .wifi:
-            debugLog("Reachable via WiFi")
-        case .cellular:
-            debugLog("Reachable via Cellular")
-        case .none:
-            debugLog("Network not reachable")
-        }
-    }
-}
-
-// MARK: Actions
-extension BaseViewController {
-    @objc func handleDismiss() {
-        self.dismiss(animated: true, completion: nil)
-    }
 }
