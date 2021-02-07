@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C607DD1D25CFF9200025C4C0 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607DD1C25CFF9200025C4C0 /* NetworkProtocol.swift */; };
 		C607DD2225CFF9500025C4C0 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607DD2125CFF9500025C4C0 /* NetworkController.swift */; };
+		C607DD2C25CFFB3B0025C4C0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607DD2B25CFFB3B0025C4C0 /* NetworkError.swift */; };
+		C607DD3425CFFDAB0025C4C0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607DD3325CFFDAB0025C4C0 /* HTTPMethod.swift */; };
+		C607DD3925CFFF040025C4C0 /* URLCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607DD3825CFFF040025C4C0 /* URLCenter.swift */; };
 		C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		C607DD1C25CFF9200025C4C0 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		C607DD2125CFF9500025C4C0 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		C607DD2B25CFFB3B0025C4C0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C607DD3325CFFDAB0025C4C0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		C607DD3825CFFF040025C4C0 /* URLCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCenter.swift; sourceTree = "<group>"; };
 		C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		C607DD1725CFF8950025C4C0 /* URLCenter */ = {
 			isa = PBXGroup;
 			children = (
+				C607DD3825CFFF040025C4C0 /* URLCenter.swift */,
 			);
 			path = URLCenter;
 			sourceTree = "<group>";
@@ -142,6 +149,14 @@
 				C607DD2125CFF9500025C4C0 /* NetworkController.swift */,
 			);
 			path = NetworkController;
+			sourceTree = "<group>";
+		};
+		C607DD2A25CFFB2D0025C4C0 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C607DD2B25CFFB3B0025C4C0 /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C65EF37325CFF6E300D8A310 /* Model */ = {
@@ -225,9 +240,11 @@
 		C6AC79D925CFEAD800C73D75 /* StackNetworkController */ = {
 			isa = PBXGroup;
 			children = (
+				C607DD2A25CFFB2D0025C4C0 /* Error */,
 				C607DD1725CFF8950025C4C0 /* URLCenter */,
 				C607DD1825CFF8D50025C4C0 /* Observable */,
 				C607DD2625CFFAA30025C4C0 /* NetworkController */,
+				C607DD3325CFFDAB0025C4C0 /* HTTPMethod.swift */,
 			);
 			path = StackNetworkController;
 			sourceTree = "<group>";
@@ -538,6 +555,7 @@
 				C6AC7A2C25CFEEA900C73D75 /* ApplicationRouter.swift in Sources */,
 				C6AC7A7425CFF38B00C73D75 /* AlertController.swift in Sources */,
 				C607DD2225CFF9500025C4C0 /* NetworkController.swift in Sources */,
+				C607DD3925CFFF040025C4C0 /* URLCenter.swift in Sources */,
 				C6AC7A6125CFF28400C73D75 /* Constraints.swift in Sources */,
 				C6AC7A3E25CFF0D500C73D75 /* BaseTableViewCell.swift in Sources */,
 				C6AC7A4425CFF10B00C73D75 /* DebugLog.swift in Sources */,
@@ -555,6 +573,8 @@
 				C6AC7A6C25CFF34600C73D75 /* Observable.swift in Sources */,
 				C607DD1D25CFF9200025C4C0 /* NetworkProtocol.swift in Sources */,
 				C6AC7A0025CFEC6300C73D75 /* Localisable.swift in Sources */,
+				C607DD3425CFFDAB0025C4C0 /* HTTPMethod.swift in Sources */,
+				C607DD2C25CFFB3B0025C4C0 /* NetworkError.swift in Sources */,
 				C6AC7A5025CFF17C00C73D75 /* BaseView.swift in Sources */,
 				C6AC7A5525CFF1A300C73D75 /* UITableViewCell.swift in Sources */,
 			);
