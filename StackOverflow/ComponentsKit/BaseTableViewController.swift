@@ -14,10 +14,11 @@ protocol BaseTableViewProtocol {
 public class BaseTableViewController: BaseViewController, BaseTableViewProtocol {
     
     lazy var baseTableView: UITableView = {
-         let tableView = UITableView(frame: .zero,
-                                     style: UITableView.Style.plain)
-         tableView.backgroundColor = Colour.pale
+        let tableView = UITableView(frame: .zero,
+                                     style: .grouped)
+        tableView.backgroundColor = Colour.pale
         tableView.separatorStyle = .singleLine
+        tableView.keyboardDismissMode = .interactive
         tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView

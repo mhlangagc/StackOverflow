@@ -60,6 +60,10 @@ public class BaseViewController: UIViewController {
                                   title: title,
                                   message: description)
     }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 
 }
 
