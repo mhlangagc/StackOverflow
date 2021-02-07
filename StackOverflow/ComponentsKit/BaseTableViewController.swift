@@ -27,6 +27,7 @@ public class BaseTableViewController: BaseViewController, BaseTableViewProtocol 
     public override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
+        registerDelegates()
     }
     
     @objc func registerTableViewCells() {

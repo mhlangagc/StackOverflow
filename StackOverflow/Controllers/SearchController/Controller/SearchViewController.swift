@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: BaseViewController {
+final class SearchViewController: BaseTableViewController {
 
     lazy var viewModel = SearchViewModel()
     
@@ -27,8 +27,10 @@ final class SearchViewController: BaseViewController {
         baseTableView.constrain(to: view)
     }
     
-    func BaseTableViewController() {
-        baseTableView.data
+    override func registerDelegates() {
+        super.registerDelegates()
+        baseTableView.dataSource = self
+        baseTableView.delegate = self
     }
 }
 

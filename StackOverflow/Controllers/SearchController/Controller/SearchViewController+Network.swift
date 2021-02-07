@@ -13,7 +13,7 @@ extension SearchViewController  {
         viewModel.searchResults.addAndNotify(observer: self, completionHandler: { [weak self] (_) in
             dispatchOnMainThread {
                 guard let self = self else { return }
-                self.searchResultsTableView.reloadData()
+                self.baseTableView.reloadData()
             }
         })
 
