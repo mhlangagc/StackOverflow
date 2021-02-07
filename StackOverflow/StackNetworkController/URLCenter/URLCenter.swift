@@ -7,7 +7,7 @@
 
 import Foundation
 
-@frozen enum BaseURL {
+@frozen enum URLCenter {
     case stackOverFlow
     
     public func buildURL(urlPath: String) -> String {

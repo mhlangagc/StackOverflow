@@ -8,14 +8,11 @@
 import Foundation
 
 protocol NetworkProtocol: NetworkController {
-    /*
     func fetchData<Model: Decodable>(forPath path: String,
-                                     alternativeStringPath: String?,
                                      parameters: Parameters?,
                                      headers: HTTPHeaders?,
                                      method: HTTPMethod,
-                                     selectedBaseURL: BaseURL,
+                                     selectedBaseURL: URLCenter,
                                      model: Model.Type,
                                      completion: @escaping (Error?, Model?) -> Void)
-    */
 }

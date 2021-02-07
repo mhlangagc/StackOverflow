@@ -17,12 +17,11 @@ final class NetworkController: NetworkProtocol {
                                      parameters: Parameters? = [:],
                                      headers: HTTPHeaders? = nil,
                                      method: HTTPMethod,
-                                     selectedBaseURL: BaseURL = .stackOverFlow,
+                                     selectedBaseURL: URLCenter = .stackOverFlow,
                                      model: Model.Type,
                                      completion: @escaping (Error?, Model?) -> Void) {
         
-        let urlPath = ""//URLCenter.shared.buildURL(withPath: URLRemotePath.limits.rawValue, selectedBaseURL: BaseURL.restOfWorld)
-        
+        let urlPath = selectedBaseURL.buildURL(urlPath: path)
         guard let encodedURL: String = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL) else {
             return
@@ -33,9 +32,11 @@ final class NetworkController: NetworkProtocol {
         request.addValue(HeaderKeys.Values.accept, forHTTPHeaderField: HeaderKeys.Name.accept)
         request.addValue(HeaderKeys.Values.contentType, forHTTPHeaderField: HeaderKeys.Name.contentType)
         
-        if !parameters?.isEmpty {
-            let jsonBody = try? JSONSerialization.data(withJSONObject: parameters)
-            request.httpBody = jsonBody
+        if let parameters = parameters {
+            if !parameters.isEmpty {
+                let jsonBody = try? JSONSerialization.data(withJSONObject: parameters)
+                request.httpBody = jsonBody
+            }
         }
         
         

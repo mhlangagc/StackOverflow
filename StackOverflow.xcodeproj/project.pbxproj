@@ -16,6 +16,7 @@
 		C6109A4825D0035100115681 /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A4725D0035100115681 /* URLPath.swift */; };
 		C6109A5025D0077600115681 /* HTTPHeaderKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A4F25D0077600115681 /* HTTPHeaderKeys.swift */; };
 		C6109A5525D0088400115681 /* BundleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A5425D0088400115681 /* BundleConstants.swift */; };
+		C6109A6425D00F0A00115681 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6109A6325D00F0A00115681 /* ResponseHandler.swift */; };
 		C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
@@ -73,6 +74,7 @@
 		C6109A4725D0035100115681 /* URLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
 		C6109A4F25D0077600115681 /* HTTPHeaderKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderKeys.swift; sourceTree = "<group>"; };
 		C6109A5425D0088400115681 /* BundleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleConstants.swift; sourceTree = "<group>"; };
+		C6109A6325D00F0A00115681 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				C607DD1C25CFF9200025C4C0 /* NetworkProtocol.swift */,
 				C607DD2125CFF9500025C4C0 /* NetworkController.swift */,
+				C6109A6325D00F0A00115681 /* ResponseHandler.swift */,
 			);
 			path = NetworkController;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				C6AC7A4425CFF10B00C73D75 /* DebugLog.swift in Sources */,
 				C6AC7A3425CFEF8E00C73D75 /* Colour.swift in Sources */,
 				C6AC79E725CFEBE400C73D75 /* SearchViewController+TableView.swift in Sources */,
+				C6109A6425D00F0A00115681 /* ResponseHandler.swift in Sources */,
 				C6109A4025D000A800115681 /* HTTPHeader.swift in Sources */,
 				C6AC79F825CFEC4400C73D75 /* SearchResultsCell.swift in Sources */,
 				C6AC7A1B25CFED5C00C73D75 /* StackCoordinator.swift in Sources */,

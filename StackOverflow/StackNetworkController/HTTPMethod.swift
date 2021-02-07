@@ -7,7 +7,7 @@
 
 import Foundation
 
-@frozen enum HTTPMethod {
+@frozen enum HTTPMethod: String {
     case POST
     case PUT
     case GET
