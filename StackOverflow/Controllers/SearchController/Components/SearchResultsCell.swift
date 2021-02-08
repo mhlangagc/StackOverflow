@@ -29,6 +29,10 @@ final class SearchResultsCell: BaseTableCell {
             if let viewCount = question.viewCount {
                 viewsLabel.text = viewCount == 1 ? oneViewText : viewsText.replacingOccurrences(of: "%@", with: String(describing: viewCount))
             }
+            
+            if let voteCount = question.score {
+                votesLabel.text = voteCount == 1 ? oneVoteText : votesText.replacingOccurrences(of: "%@", with: String(describing: voteCount))
+            }
         }
     }
     
@@ -45,7 +49,7 @@ final class SearchResultsCell: BaseTableCell {
         let label = UILabel()
         label.font = Font.regular14
         label.textColor = Colour.primary
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -63,7 +67,7 @@ final class SearchResultsCell: BaseTableCell {
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.alignment = .leading
-        stackView.spacing = Layout.spacing8
+        stackView.spacing = Layout.spacing12
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -117,7 +121,7 @@ final class SearchResultsCell: BaseTableCell {
         accessoryType = .disclosureIndicator
         layoutView()
     }
-    
+
     private func layoutView() {
         addSubview(voteAnswersViewStackView)
         addSubview(titleImageStackView)
@@ -127,8 +131,7 @@ final class SearchResultsCell: BaseTableCell {
         voteAnswersViewStackView.width(Layout.spacing64)
         
         titleImageStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: Layout.spacing18).isActive = true
-        titleImageStackView.topAnchor.constraint(equalTo: topAnchor, constant: Layout.spacing10).isActive = true
-        titleImageStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.spacing10).isActive = true
+        titleImageStackView.centerYAnchor ->> centerYAnchor
         titleImageStackView.rightAnchor.constraint(equalTo: voteAnswersViewStackView.leftAnchor, constant: -Layout.spacing18).isActive = true
     }
 }

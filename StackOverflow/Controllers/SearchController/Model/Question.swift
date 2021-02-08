@@ -19,7 +19,7 @@ struct Question: Codable {
     var isAnswered: Bool?
     var viewCount, answerCount, score, lastActivityDate: Int?
     var creationDate, questionID: Int?
-    var contentLicense: ContentLicense?
+    //var contentLicense: ContentLicense?
     var link: String?
     var title: String?
     var lastEditDate, acceptedAnswerID: Int?
@@ -33,7 +33,7 @@ struct Question: Codable {
         case lastActivityDate   = "last_activity_date"
         case creationDate       = "creation_date"
         case questionID         = "question_id"
-        case contentLicense     = "content_license"
+        //case contentLicense     = "content_license"
         case link, title
         case lastEditDate       = "last_edit_date"
         case acceptedAnswerID   = "accepted_answer_id"

@@ -47,11 +47,12 @@ public class BaseViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Colour.pale
         checkNetworkReachability()
+        loadingAnimation()
     }
 
     func loadingAnimation() {
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
+        view.addSubview(activityIndicatorView)
+        
         activityIndicatorView.centerXAnchor ->> view.centerXAnchor
         activityIndicatorView.centerYAnchor ->> view.centerYAnchor
         activityIndicatorView.height(30.0)

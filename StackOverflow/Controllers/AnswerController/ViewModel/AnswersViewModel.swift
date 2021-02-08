@@ -9,7 +9,12 @@ import Foundation
 
 final class AnswersViewModel: BaseViewModel {
     
+    var question: Question
+    
     var searchResults = Observable<[Question]>([])
     var errorBlock: ((NetworkError) -> Swift.Void)?
     
+    init(question: Question) {
+        self.question = question
+    }
 }

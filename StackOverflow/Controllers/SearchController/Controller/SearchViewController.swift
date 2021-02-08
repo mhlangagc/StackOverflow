@@ -10,7 +10,18 @@ import UIKit
 final class SearchViewController: BaseTableViewController {
 
     lazy var viewModel = SearchViewModel()
-    var isSearching = false
+    
+    var isSearching = false {
+        didSet {
+            if isSearching {
+                baseTableView.backgroundView = nil
+                activityIndicatorView.startAnimating()
+            } else {
+                baseTableView.backgroundView = stackOverflowSearchLabel
+                activityIndicatorView.stopAnimating()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +46,7 @@ final class SearchViewController: BaseTableViewController {
     func layoutViews() {
         view.addSubview(baseTableView)
         baseTableView.constrain(to: view)
+        loadingAnimation()
     }
     
     func registerTableDelegates() {
@@ -46,13 +58,14 @@ final class SearchViewController: BaseTableViewController {
         baseSearchBar.placeholder = searchBarPlaceHolderText
         baseSearchBar.delegate = self
         baseSearchBar.searchTextField.delegate = self
+        baseSearchBar.searchTextField.clearButtonMode = .never
     }
 }
 
 // MARK: Navigation
 extension SearchViewController {
     func showQuestionController(with question: Question) {
-        coordinator.showQuestionController(withQuestion: question, from: self)
+        coordinator.showQuestionController(withQuestion: question, from: self.navigationController)
     }
 }
 

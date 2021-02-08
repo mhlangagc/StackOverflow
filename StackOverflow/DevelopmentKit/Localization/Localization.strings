@@ -11,10 +11,12 @@
 "ASKED_BY" = "asked by %@";
 
 "ONE_ANSWER" = "1 Answer";
-"ANSWERS" = "%@ AnswerS";
+"ANSWERS" = "%@ Answers";
 
 "ONE_VOTE" = "1 Vote";
 "VOTES" = "%@ Votes";
 
 "ONE_VIEW" = "1 View";
 "VIEWS" = "%@ Views";
+
+"ASKED_AT" = "asked %date at %time";

@@ -11,8 +11,8 @@ extension SearchViewController: UISearchBarDelegate, UITextFieldDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         baseSearchBar.showsCancelButton = true
-        isSearching = true
-        return isSearching
+        baseTableView.backgroundView = nil
+        return true
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
@@ -23,16 +23,16 @@ extension SearchViewController: UISearchBarDelegate, UITextFieldDelegate {
         isSearching = true
         guard let query = searchBar.searchTextField.text,
               !query.isEmpty else { return }
-        
+        searchBar.searchTextField.resignFirstResponder()
         viewModel.searchWithQuery(query.lowercased().trimmed)
-        self.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
         baseSearchBar.showsCancelButton = false
+        searchBar.searchTextField.resignFirstResponder()
         viewModel.searchResults.value?.removeAll()
-        self.resignFirstResponder()
+        searchBar.searchTextField.text = nil
+        isSearching = false
     }
     
 }
