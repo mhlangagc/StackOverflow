@@ -29,7 +29,7 @@ final class QuestionOwnerView: BaseView {
                 .replacingOccurrences(of: "%time", with: questionTime)
             
             //  ImageDisplay
-            if let link = owner.link {
+            if let link = owner.profileImage {
                 ownerImageView.displayImage(fromLink: link)
             }
         }
@@ -53,7 +53,7 @@ final class QuestionOwnerView: BaseView {
     
     private lazy var reputationLabel: UILabel = {
         let label = UILabel()
-        label.font = Font.regular10
+        label.font = Font.semibold10
         label.textColor = Colour.grey
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -82,26 +82,39 @@ final class QuestionOwnerView: BaseView {
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
         stackView.alignment = .center
-        stackView.spacing = Layout.spacing8
+        stackView.spacing = Layout.spacing10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
+    }()
+    
+    private let topLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colour.lightGrey
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override func configureView() {
         super.configureView()
         backgroundColor = Colour.pale
-        //layoutView()
+        layoutView()
     }
 
     private func layoutView() {
         addSubview(ownerImageStackView)
+        addSubview(topLineView)
         
-        ownerImageView.width(Layout.spacing24)
-        ownerImageView.height(Layout.spacing24)
+        ownerImageView.width(Layout.spacing32)
+        ownerImageView.height(Layout.spacing32)
         
         ownerImageStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: Layout.spacing18).isActive = true
         ownerImageStackView.centerYAnchor ->> centerYAnchor
         ownerImageStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -Layout.spacing18).isActive = true
+        
+        topLineView.leftAnchor ->> leftAnchor
+        topLineView.rightAnchor ->> rightAnchor
+        topLineView.topAnchor ->> topAnchor
+        topLineView.height(0.8)
     }
 }
 

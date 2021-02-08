@@ -17,6 +17,7 @@ final class SearchViewController: BaseTableViewController {
                 baseTableView.backgroundView = nil
                 activityIndicatorView.startAnimating()
             } else {
+                stackOverflowSearchLabel.text = stackOverFlowSearchText
                 baseTableView.backgroundView = stackOverflowSearchLabel
                 activityIndicatorView.stopAnimating()
             }
@@ -73,4 +74,5 @@ extension SearchViewController {
 extension SearchViewController {
     var searchBarPlaceHolderText: String { Localizable.localized(key: "SEARCH")}
     var stackOverFlowSearchText: String { Localizable.localized(key: "STACK_OVERFLOW_SEARCH")}
+    var noResultsFoundText: String { Localizable.localized(key: "NO_RESULTS_FOUND")}
 }

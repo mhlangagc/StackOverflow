@@ -34,7 +34,7 @@ final class TagsView: BaseView {
     
     override func configureView() {
         super.configureView()
-        backgroundColor = Colour.pale
+        backgroundColor = Colour.white
         layoutView()
     }
     

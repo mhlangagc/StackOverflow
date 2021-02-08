@@ -16,6 +16,7 @@ extension SearchViewController  {
                 self.isSearching = false
                 self.baseTableView.backgroundView = nil
                 self.baseTableView.reloadData()
+                self.showNoResultsView()
             }
         })
 
@@ -23,6 +24,14 @@ extension SearchViewController  {
             dispatchOnMainThread {
                 debugLog("Error: \(String(describing: error))")
             }
+        }
+    }
+    
+    func showNoResultsView() {
+        guard let results = viewModel.searchResults.value else { return }
+        if results.isEmpty {
+            stackOverflowSearchLabel.text = noResultsFoundText
+            baseTableView.backgroundView = stackOverflowSearchLabel
         }
     }
 }

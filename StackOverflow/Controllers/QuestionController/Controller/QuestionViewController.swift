@@ -1,5 +1,5 @@
 //
-//  AnswersViewController.swift
+//  QuestionViewController.swift
 //  StackOverflow
 //
 //  Created by Gugulethu on 2021/02/08.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AnswersViewController: BaseViewController {
+final class QuestionViewController: BaseViewController {
     
     var viewModel: AnswersViewModel
     
@@ -17,6 +17,7 @@ final class AnswersViewController: BaseViewController {
         questionTitleView.question = question
         questionOwnerView.question = question
         tagsView.question = question
+        questionDetailsTextView.attributedText = question.link?.htmlToAttributedString
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -39,15 +40,31 @@ final class AnswersViewController: BaseViewController {
         return view
     }()
     
+    private lazy var questionDetailsTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = Font.regular13
+        textView.textColor = Colour.black
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Colour.white
+        setupNavigationBar()
         layoutView()
+    }
+    
+    private func setupNavigationBar() {
+        nolineNavigationBar()
+        setNavigationTitle(questionText)
     }
     
     private func layoutView() {
         view.addSubview(questionTitleView)
         view.addSubview(questionOwnerView)
         view.addSubview(tagsView)
+        view.addSubview(questionDetailsTextView)
         
         questionTitleView.leftAnchor ->> view.leftAnchor
         questionTitleView.rightAnchor ->> view.rightAnchor
@@ -63,6 +80,14 @@ final class AnswersViewController: BaseViewController {
         tagsView.rightAnchor ->> view.rightAnchor
         tagsView.bottomAnchor ->> questionOwnerView.topAnchor
         tagsView.height(Layout.spacing20)
+        
+        questionDetailsTextView.leftAnchor ->> view.leftAnchor
+        questionDetailsTextView.rightAnchor ->> view.rightAnchor
+        questionDetailsTextView.topAnchor ->> questionTitleView.bottomAnchor
+        questionDetailsTextView.bottomAnchor ->> tagsView.topAnchor
     }
-    
+}
+
+extension QuestionViewController {
+    var questionText: String { Localizable.localized(key: "QUESTION")}
 }

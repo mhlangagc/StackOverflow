@@ -9,6 +9,7 @@
 "SEARCH" = "Search";
 "STACK_OVERFLOW_SEARCH" = "Stack Overflow Search";
 "ASKED_BY" = "asked by %@";
+"NO_RESULTS_FOUND" = "No Results Found";
 
 "ONE_ANSWER" = "1 Answer";
 "ANSWERS" = "%@ Answers";
@@ -19,4 +20,5 @@
 "ONE_VIEW" = "1 View";
 "VIEWS" = "%@ Views";
 
+"QUESTION" = "Question";
 "ASKED_AT" = "asked %date at %time";
