@@ -23,4 +23,13 @@ extension UIViewController {
         navigationController?.navigationBar.backgroundColor = backgroundColour
     }
     
+    func setNavigationTitle(_ title:String, titleColour: UIColor = Colour.white) {
+        let navBarTitleLabel = UILabel()
+        navBarTitleLabel.textAlignment = .center
+        navBarTitleLabel.text = title
+        navBarTitleLabel.textColor = titleColour
+        navBarTitleLabel.font = Font.semibold17
+        self.navigationItem.titleView = navBarTitleLabel
+    }
+    
 }

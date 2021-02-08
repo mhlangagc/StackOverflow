@@ -18,7 +18,6 @@ public class BaseTableViewController: BaseViewController, BaseTableViewProtocol 
                                      style: .grouped)
         tableView.backgroundColor = Colour.pale
         tableView.separatorStyle = .singleLine
-        tableView.keyboardDismissMode = .interactive
         tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView

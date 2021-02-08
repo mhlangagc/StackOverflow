@@ -12,8 +12,9 @@ final class StackCoordinator: StackCoordinatorProtocol {
     
     public static let shared = StackCoordinator()
     
-    func showQuestionController(withQuestion question: Question, from viewController: UIViewController?) {
-        
+    func showQuestionController(withQuestion question: Question, from navigationControler: UINavigationController?) {
+        let questionController = QuestionViewController(question: question)
+        navigationControler?.pushViewController(questionController, animated: true)
     }
     
 }

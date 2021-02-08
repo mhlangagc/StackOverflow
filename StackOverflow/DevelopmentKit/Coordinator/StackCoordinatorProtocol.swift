@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol StackCoordinatorProtocol: class {
-    func showQuestionController(withQuestion question: Question, from viewController: UIViewController?)
+    func showQuestionController(withQuestion question: Question, from navigationControler: UINavigationController?)
 }

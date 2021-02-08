@@ -13,7 +13,8 @@ final class Font {
     static let bold10       =  UIFont.systemFont(ofSize: 10.0, weight: .bold)
     
     //  Semibold
-    static let semibold14   =  UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+    static let semibold17   =  UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+    static let semibold10   =  UIFont.systemFont(ofSize: 10.0, weight: .semibold)
     
     //  Regular
     static let regular14    =  UIFont.systemFont(ofSize: 14.0, weight: .regular)
