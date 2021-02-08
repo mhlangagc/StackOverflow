@@ -15,7 +15,7 @@ final class SearchResultsCell: BaseTableCell {
             guard let question = question else { return }
             titleLabel.text = question.title
             if let owner = question.owner?.displayName {
-                authorLabel.text = "asked by " + owner
+                authorLabel.text = askedByText.replacingOccurrences(of: "%@", with: String(describing: owner))
             }
             
             if let isAnswered = question.isAnswered {
@@ -23,11 +23,11 @@ final class SearchResultsCell: BaseTableCell {
             }
             
             if let answerCount = question.answerCount {
-                answerLabel.text = answerCount == 1 ? "1 Answer" : "\(String(describing: answerCount)) Answers"
+                answerLabel.text = answerCount == 1 ? oneAnswerText : answersText.replacingOccurrences(of: "%@", with: String(describing: answerCount))
             }
             
             if let viewCount = question.viewCount {
-                viewsLabel.text = viewCount == 1 ? "1 View" : "\(String(describing: viewCount)) Views"
+                viewsLabel.text = viewCount == 1 ? oneViewText : viewsText.replacingOccurrences(of: "%@", with: String(describing: viewCount))
             }
         }
     }
@@ -131,4 +131,14 @@ final class SearchResultsCell: BaseTableCell {
         titleImageStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.spacing10).isActive = true
         titleImageStackView.rightAnchor.constraint(equalTo: voteAnswersViewStackView.leftAnchor, constant: -Layout.spacing18).isActive = true
     }
+}
+
+extension SearchResultsCell {
+    var askedByText: String { Localizable.localized(key: "ASKED_BY")}
+    var oneAnswerText: String { Localizable.localized(key: "ONE_ANSWER")}
+    var answersText: String { Localizable.localized(key: "ANSWERS")}
+    var oneVoteText: String { Localizable.localized(key: "ONE_VOTE")}
+    var votesText: String { Localizable.localized(key: "VOTES")}
+    var oneViewText: String { Localizable.localized(key: "ONE_VIEW")}
+    var viewsText: String { Localizable.localized(key: "VIEWS")}
 }
