@@ -17,7 +17,7 @@ final class QuestionViewController: BaseViewController {
         questionTitleView.question = question
         questionOwnerView.question = question
         tagsView.question = question
-        questionDetailsTextView.attributedText = question.link?.htmlToAttributedString
+        questionDetailsTextView.attributedText = question.body?.htmlToAttributedString
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -44,6 +44,8 @@ final class QuestionViewController: BaseViewController {
         let textView = UITextView()
         textView.font = Font.regular13
         textView.textColor = Colour.black
+        textView.isEditable = false
+        textView.isSelectable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()

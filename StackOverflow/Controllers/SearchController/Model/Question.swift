@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum ContentLicense: String, Codable {
-    case ccBySa30 = "CC BY-SA 3.0"
-    case ccBySa40 = "CC BY-SA 4.0"
-}
-
 // MARK: - Question
 struct Question: Codable {
     var tags: [String]?
@@ -19,9 +14,7 @@ struct Question: Codable {
     var isAnswered: Bool?
     var viewCount, answerCount, score, lastActivityDate: Int?
     var creationDate, questionID: Int?
-    //var contentLicense: ContentLicense?
-    var link: String?
-    var title: String?
+    var link, title, body: String?
     var lastEditDate, acceptedAnswerID: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -33,8 +26,7 @@ struct Question: Codable {
         case lastActivityDate   = "last_activity_date"
         case creationDate       = "creation_date"
         case questionID         = "question_id"
-        //case contentLicense     = "content_license"
-        case link, title
+        case link, title, body
         case lastEditDate       = "last_edit_date"
         case acceptedAnswerID   = "accepted_answer_id"
     }
