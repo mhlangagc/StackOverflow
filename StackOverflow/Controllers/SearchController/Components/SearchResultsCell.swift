@@ -13,6 +13,22 @@ final class SearchResultsCell: BaseTableCell {
     var question: Question? {
         didSet {
             guard let question = question else { return }
+            titleLabel.text = question.title
+            if let owner = question.owner?.displayName {
+                authorLabel.text = "asked by " + owner
+            }
+            
+            if let isAnswered = question.isAnswered {
+                questionAnsweredImageView.isHidden = !isAnswered
+            }
+            
+            if let answerCount = question.answerCount {
+                answerLabel.text = answerCount == 1 ? "1 Answer" : "\(String(describing: answerCount)) Answers"
+            }
+            
+            if let viewCount = question.viewCount {
+                answerLabel.text = viewCount == 1 ? "1 View" : "\(String(describing: viewCount)) Views"
+            }
         }
     }
     
@@ -27,7 +43,6 @@ final class SearchResultsCell: BaseTableCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "How to make a UITextField move up when keyboard is present?"
         label.font = Font.regular14
         label.textColor = Colour.primary
         label.numberOfLines = 0
@@ -37,7 +52,6 @@ final class SearchResultsCell: BaseTableCell {
     
     private lazy var authorLabel: UILabel = {
         let label = UILabel()
-        label.text = "asked by Nathan"
         label.font = Font.regular10
         label.textColor = Colour.grey
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +89,6 @@ final class SearchResultsCell: BaseTableCell {
     
     private lazy var answerLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 Answers"
         label.font = Font.regular10
         label.textColor = Colour.grey
         label.translatesAutoresizingMaskIntoConstraints = false
