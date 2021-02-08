@@ -12,7 +12,7 @@ import SystemConfiguration
 
 public class BaseViewController: UIViewController {
     
-    lazy var coordinator = resolve(StackCoordinator.self)
+    lazy var coordinator = resolve(StackCoordinatorProtocol.self)
     let generator = UINotificationFeedbackGenerator()
     
     // MARK: Reachability
@@ -31,6 +31,8 @@ public class BaseViewController: UIViewController {
         searchBar.barStyle = .default
         searchBar.backgroundColor = Colour.primary
         searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchTextField.autocorrectionType = .no
+        searchBar.searchTextField.autocapitalizationType = .none
         searchBar.frame = .zero
         searchBar.scopeButtonTitles = nil
         searchBar.scopeBarBackgroundImage = nil
