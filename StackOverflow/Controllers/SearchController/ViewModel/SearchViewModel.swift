@@ -24,7 +24,7 @@ final class SearchViewModel: BaseViewModel {
         networkController.searchForAnswers(withQuery: query, always: {
             loadSearchResultsSemaphore.signal()
         }, onSuccess: { (searchResults) in
-            self.searchResults.value = searchResults.questions
+            self.searchResults.value = searchResults.items
         }) { (error) in
             self.errorBlock?(error)
         }

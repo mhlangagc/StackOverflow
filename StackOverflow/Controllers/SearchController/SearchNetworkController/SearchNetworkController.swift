@@ -36,8 +36,8 @@ final class SearchNetworkController: SearchNetworkProtocol, NetworkResponseHandl
         
         APIKit.shared.fetchData(forPath: query,
                                 parameters: parameters,
-                                method: .post,
-                                model: Questions.self) { (error, model) in
+                                method: .get,
+                                model: Questions.self) { (model, response, error) in
             
             self.handleResponse(response: model, error: error) { (result) in
                 switch result {
