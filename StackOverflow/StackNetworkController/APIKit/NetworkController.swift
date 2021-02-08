@@ -21,7 +21,7 @@ final class APIKit: APIKitProtocol {
                                      model: Model.Type,
                                      completion: @escaping (Model?, URLResponse?, Error?) -> Swift.Void) {
         
-        let urlPath = selectedBaseURL.buildURL(urlPath: path)
+        let urlPath = URLCenter.buildURL(<#T##self: URLCenter##URLCenter#>)
         guard let encodedURL: String = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL) else {
             return
@@ -29,8 +29,8 @@ final class APIKit: APIKitProtocol {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        request.addValue(HeaderKeys.Values.accept, forHTTPHeaderField: HeaderKeys.Name.accept)
-        request.addValue(HeaderKeys.Values.contentType, forHTTPHeaderField: HeaderKeys.Name.contentType)
+//        request.addValue(HeaderKeys.Values.accept, forHTTPHeaderField: HeaderKeys.Name.accept)
+//        request.addValue(HeaderKeys.Values.contentType, forHTTPHeaderField: HeaderKeys.Name.contentType)
         
         if let parameters = parameters {
             if !parameters.isEmpty {

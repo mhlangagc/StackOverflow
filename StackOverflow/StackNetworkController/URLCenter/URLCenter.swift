@@ -7,16 +7,24 @@
 
 import Foundation
 
-@frozen enum URLCenter {
-    case stackOverFlow
+enum BaseURL: String {
+    case stackOverflow
+}
+
+final class URLCenter {
     
-    public func buildURL(urlPath: String) -> String {
-        switch self {
-        case .stackOverFlow:
+    static let shared = URLCenter()
+    
+    public func buildURL(withPath urlPath: String,
+                         baseURL: BaseURL) -> String {
+        
+        switch baseURL {
+        case .stackOverflow:
             guard let `protocol` = BundleConstants.protocol.fetchValue(),
-                  let uri = BundleConstants.stackOverFlow.fetchValue() else {
+                  let uri = BundleConstants.site.fetchValue() else {
                 return ""
             }
+            return "/2.2/questions?pagesize=20&order=desc&sort=activity&tagged=swift&site=stackoverflow"
             return "\(`protocol`)://\(uri)/\(urlPath)"
         }
         

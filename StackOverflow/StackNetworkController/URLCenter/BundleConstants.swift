@@ -9,23 +9,20 @@ import Foundation
 
 public class BundleKey {
     static let `protocol`       = "BaseURLProtocol"
-    static let stackOverflow    = "StackOverflow"
-    static let appVersion       = "CFBundleShortVersionString"
+    static let site             = "StackOverflowSite"
 }
 
 enum BundleConstants {
     case `protocol`
-    case stackOverFlow
+    case site
     case version
     
     func fetchValue() -> String? {
         switch self {
         case .protocol:
             return Bundle.main.infoDictionary?[BundleKey.`protocol`] as? String
-        case .stackOverFlow:
-            return Bundle.main.infoDictionary?[BundleKey.stackOverflow] as? String
-        case .version:
-            return Bundle.main.infoDictionary?[BundleKey.appVersion] as? String
+        case .site:
+            return Bundle.main.infoDictionary?[BundleKey.site] as? String
         }
     }
 }
