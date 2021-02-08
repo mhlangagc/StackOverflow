@@ -53,6 +53,8 @@
 		C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */; };
 		C6C5E92725D0221E003FE946 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */; };
 		C6CD253625D02B3E00C3CA0D /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */; };
+		C6D526D025D0C40F00437F02 /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D526CF25D0C40F00437F02 /* SearchParameters.swift */; };
+		C6D526D625D0CAB300437F02 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D526D525D0CAB300437F02 /* String+Extension.swift */; };
 		C6ECD3DF25D0B441003CB3CC /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECD3DE25D0B441003CB3CC /* AnswersViewController.swift */; };
 		C6ECD3E825D0B46A003CB3CC /* AnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECD3E725D0B46A003CB3CC /* AnswersViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +129,8 @@
 		C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		C6D526CF25D0C40F00437F02 /* SearchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
+		C6D526D525D0CAB300437F02 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C6ECD3DE25D0B441003CB3CC /* AnswersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
 		C6ECD3E725D0B46A003CB3CC /* AnswersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,6 +234,7 @@
 				C653DC8125D014FF00F67F9B /* SearchResult.swift */,
 				C653DC9025D016F200F67F9B /* Question.swift */,
 				C653DC9825D01CA100F67F9B /* Owner.swift */,
+				C6D526CF25D0C40F00437F02 /* SearchParameters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 		C6AC79DF25CFEB2100C73D75 /* DevelopmentKit */ = {
 			isa = PBXGroup;
 			children = (
+				C6D526D425D0CA9600437F02 /* Extensions */,
 				C6109A5C25D008D400115681 /* BundleConstants */,
 				C6AC7A7B25CFF40E00C73D75 /* Rechabilty */,
 				C6AC7A4225CFF10100C73D75 /* DebugLog */,
@@ -485,6 +491,14 @@
 				C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */,
 			);
 			path = Rechabilty;
+			sourceTree = "<group>";
+		};
+		C6D526D425D0CA9600437F02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6D526D525D0CAB300437F02 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C6ECD3DA25D0B3B9003CB3CC /* AnswerController */ = {
@@ -673,10 +687,12 @@
 				C653DC9925D01CA100F67F9B /* Owner.swift in Sources */,
 				C6AC7A1B25CFED5C00C73D75 /* StackCoordinator.swift in Sources */,
 				C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */,
+				C6D526D025D0C40F00437F02 /* SearchParameters.swift in Sources */,
 				C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */,
 				C653DC8225D014FF00F67F9B /* SearchResult.swift in Sources */,
 				C6AC7A0B25CFECC700C73D75 /* StringsFile.swift in Sources */,
 				C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */,
+				C6D526D625D0CAB300437F02 /* String+Extension.swift in Sources */,
 				C6AC7A6625CFF2A700C73D75 /* Layout.swift in Sources */,
 				C6AC7A1625CFED4E00C73D75 /* StackCoordinatorProtocol.swift in Sources */,
 				C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */,

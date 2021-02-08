@@ -7,15 +7,6 @@
 
 import Foundation
 
-@frozen enum SearchParameters: String {
-    case title
-    case pageSize   = "20"
-    case order      = "desc"
-    case sort       = "activity"
-    case site       = "stackoverflow"
-    case filter     = "withbody"
-}
-
 final class SearchNetworkController: SearchNetworkProtocol, NetworkResponseHandlerProtocol {
 
     var defaultError: NetworkError = NetworkError.default
@@ -27,16 +18,23 @@ final class SearchNetworkController: SearchNetworkProtocol, NetworkResponseHandl
                           onSuccess: @escaping (Questions) -> Void,
                           onError: @escaping (NetworkError) -> Void) {
         
-        let parameters: Parameters = [SearchParameters.title.rawValue: query,
-                                      SearchParameters.pageSize.rawValue: "20",
-                                      SearchParameters.order.rawValue: "desc",
-                                      SearchParameters.sort.rawValue: "activity",
-                                      SearchParameters.site.rawValue: "stackoverflow",
-                                      SearchParameters.filter.rawValue: "withbody"]
+//        let parameters: Parameters = [SearchParameters.title: query,
+//                                      SearchParameters.pageSize: "20",
+//                                      SearchParameters.order: "desc",
+//                                      SearchParameters.sort: "activity",
+//                                      SearchParameters.site: "stackoverflow",
+//                                      SearchParameters.filter: "withbody"]
+        
+        let parameters = SearchParameters(title: query,
+                                          pageSize: "20",
+                                          order: "desc",
+                                          sort: "activity",
+                                          site: "stackoverflow",
+                                          filter:  "withbody")
         
         APIKit.shared.fetchData(forPath: query,
-                                parameters: parameters,
                                 method: .get,
+                                baseURL: .stackOverflow(parameters: parameters),
                                 model: Questions.self) { (model, response, error) in
             
             self.handleResponse(response: model, error: error) { (result) in

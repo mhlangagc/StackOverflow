@@ -23,7 +23,8 @@ extension SearchViewController: UISearchBarDelegate, UITextFieldDelegate {
         isSearching = true
         guard let query = searchBar.searchTextField.text,
               !query.isEmpty else { return }
-        viewModel.searchWithQuery(query.lowercased())
+        
+        viewModel.searchWithQuery(query.lowercased().trimmed)
         self.resignFirstResponder()
     }
     

@@ -17,11 +17,11 @@ final class APIKit: APIKitProtocol {
                                      parameters: Parameters? = [:],
                                      headers: HTTPHeaders? = nil,
                                      method: HTTPMethod,
-                                     selectedBaseURL: URLCenter = .stackOverFlow,
+                                     baseURL: BaseURL,
                                      model: Model.Type,
                                      completion: @escaping (Model?, URLResponse?, Error?) -> Swift.Void) {
         
-        let urlPath = URLCenter.buildURL(<#T##self: URLCenter##URLCenter#>)
+        let urlPath = URLCenter.shared.buildURL(withPath: path, baseURL: baseURL)
         guard let encodedURL: String = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL) else {
             return
@@ -29,16 +29,7 @@ final class APIKit: APIKitProtocol {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-//        request.addValue(HeaderKeys.Values.accept, forHTTPHeaderField: HeaderKeys.Name.accept)
-//        request.addValue(HeaderKeys.Values.contentType, forHTTPHeaderField: HeaderKeys.Name.contentType)
-        
-        if let parameters = parameters {
-            if !parameters.isEmpty {
-                let jsonBody = try? JSONSerialization.data(withJSONObject: parameters)
-                request.httpBody = jsonBody
-            }
-        }
-        
+
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
            
             guard let data = data, error == nil else {
@@ -55,6 +46,7 @@ final class APIKit: APIKitProtocol {
                 debugLog("Error Fetching Data from \(model). Error: \(error)")
                 completion(nil, nil, error)
             }
+            
         })
         task.resume()
         
