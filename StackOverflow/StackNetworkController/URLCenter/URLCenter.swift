@@ -7,18 +7,26 @@
 
 import Foundation
 
-@frozen enum URLCenter {
-    case stackOverFlow
+enum BaseURL {
+    case stackOverflow(parameters: SearchParameters)
+}
+
+
+final class URLCenter {
     
-    public func buildURL(urlPath: String) -> String {
-        switch self {
-        case .stackOverFlow:
+    static let shared = URLCenter()
+    
+    func buildURL(withPath path: String,
+                  baseURL: BaseURL) -> String {
+        
+        switch baseURL {
+        case .stackOverflow(let parameters):
             guard let `protocol` = BundleConstants.protocol.fetchValue(),
-                  let uri = BundleConstants.stackOverFlow.fetchValue() else {
+                  let url = BundleConstants.site.fetchValue(),
+                  let apiVersion = BundleConstants.version.fetchValue()else {
                 return ""
             }
-            return "\(`protocol`)://\(uri)/\(urlPath)"
+            return "\(`protocol`)://\(url)/\(apiVersion)/questions?pagesize=\(parameters.pageSize)&order=\(parameters.order)&sort=\(parameters.sort)&tagged=\(path)&site=\(parameters.site)&filter=\(parameters.filter)"
         }
-        
     }
 }

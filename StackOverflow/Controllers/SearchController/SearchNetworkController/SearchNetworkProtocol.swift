@@ -10,6 +10,6 @@ import Foundation
 protocol SearchNetworkProtocol: SearchNetworkController {
     func searchForAnswers(withQuery query: String,
                           always: @escaping (() -> Void),
-                          onSuccess: @escaping (SearchResult) -> Void,
+                          onSuccess: @escaping (Questions) -> Void,
                           onError: @escaping (NetworkError) -> Void)
 }

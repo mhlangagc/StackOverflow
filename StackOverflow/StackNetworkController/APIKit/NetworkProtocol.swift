@@ -12,7 +12,7 @@ protocol APIKitProtocol: APIKit {
                                      parameters: Parameters?,
                                      headers: HTTPHeaders?,
                                      method: HTTPMethod,
-                                     selectedBaseURL: URLCenter,
+                                     baseURL: BaseURL,
                                      model: Model.Type,
-                                     completion: @escaping (NetworkError?, Model?) -> Void)
+                                     completion: @escaping (Model?, URLResponse?, Error?) -> Void)
 }
