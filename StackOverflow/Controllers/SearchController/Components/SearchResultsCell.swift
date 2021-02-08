@@ -16,7 +16,7 @@ final class SearchResultsCell: BaseTableCell {
         }
     }
     
-    lazy var questionAnsweredImageView: UIImageView = {
+    private lazy var questionAnsweredImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "ic_answered")?.withTintColor(Colour.primary)
         imageView.contentMode = .scaleAspectFit
@@ -25,7 +25,7 @@ final class SearchResultsCell: BaseTableCell {
         return imageView
     }()
     
-    lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "How to make a UITextField move up when keyboard is present?"
         label.font = Font.regular14
@@ -35,7 +35,7 @@ final class SearchResultsCell: BaseTableCell {
         return label
     }()
     
-    lazy var authorLabel: UILabel = {
+    private lazy var authorLabel: UILabel = {
         let label = UILabel()
         label.text = "asked by Nathan"
         label.font = Font.regular10
@@ -44,7 +44,7 @@ final class SearchResultsCell: BaseTableCell {
         return label
     }()
     
-    lazy var titleStackView: UIStackView = {
+    private lazy var titleStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, authorLabel])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
@@ -54,7 +54,7 @@ final class SearchResultsCell: BaseTableCell {
         return stackView
     }()
     
-    lazy var titleImageStackView: UIStackView = {
+    private lazy var titleImageStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [questionAnsweredImageView, titleStackView])
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
@@ -64,7 +64,7 @@ final class SearchResultsCell: BaseTableCell {
         return stackView
     }()
     
-    lazy var votesLabel: UILabel = {
+    private lazy var votesLabel: UILabel = {
         let label = UILabel()
         label.text = "0 Votes"
         label.font = Font.regular10
@@ -73,7 +73,7 @@ final class SearchResultsCell: BaseTableCell {
         return label
     }()
     
-    lazy var answerLabel: UILabel = {
+    private lazy var answerLabel: UILabel = {
         let label = UILabel()
         label.text = "2 Answers"
         label.font = Font.regular10
@@ -82,7 +82,7 @@ final class SearchResultsCell: BaseTableCell {
         return label
     }()
     
-    lazy var viewsLabel: UILabel = {
+    private lazy var viewsLabel: UILabel = {
         let label = UILabel()
         label.text = "10 Views"
         label.font = Font.regular10
@@ -91,7 +91,7 @@ final class SearchResultsCell: BaseTableCell {
         return label
     }()
     
-    lazy var voteAnswersViewStackView: UIStackView = {
+    private lazy var voteAnswersViewStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [votesLabel, answerLabel, viewsLabel])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually

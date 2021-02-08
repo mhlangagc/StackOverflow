@@ -19,7 +19,7 @@ final class APIKit: APIKitProtocol {
                                      method: HTTPMethod,
                                      selectedBaseURL: URLCenter = .stackOverFlow,
                                      model: Model.Type,
-                                     completion: @escaping (NetworkError?, Model?) -> Void) {
+                                     completion: @escaping (Model?, URLResponse?, Error?) -> Swift.Void) {
         
         let urlPath = selectedBaseURL.buildURL(urlPath: path)
         guard let encodedURL: String = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -39,29 +39,22 @@ final class APIKit: APIKitProtocol {
             }
         }
         
-        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { _, _, error in
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
            
-            if let err = error {
-                completion(NetworkError.custom(err.localizedDescription), nil)
+            guard let data = data, error == nil else {
+                completion(nil, response, error)
                 return
             }
             
-            /*
-            guard let responseData = response.data else {
-                completion(nil, ServiceError.custom("Reponse Data Missing from Response: \(response)"))
-                return
-            }
-      
             do {
                 let decoder = JSONDecoder()
-                let responseData = try decoder.decode(Model.self, from: responseData)
+                let responseData = try decoder.decode(Model.self, from: data)
                 debugLog("Data Result from URL: \(url). Expected Model: \(model). Response: \(responseData)")
-                completion(responseData, nil)
+                completion(responseData, nil, nil)
             } catch let error as NSError {
                 debugLog("Error Fetching Data from \(model). Error: \(error)")
-                completion(nil, ServiceError.custom(error.localizedDescription))
+                completion(nil, nil, error)
             }
-            */
         })
         task.resume()
         

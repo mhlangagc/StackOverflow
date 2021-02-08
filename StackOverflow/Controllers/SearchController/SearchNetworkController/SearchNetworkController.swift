@@ -24,7 +24,7 @@ final class SearchNetworkController: SearchNetworkProtocol, NetworkResponseHandl
     
     func searchForAnswers(withQuery query: String,
                           always: @escaping (() -> Void),
-                          onSuccess: @escaping (SearchResult) -> Void,
+                          onSuccess: @escaping (Questions) -> Void,
                           onError: @escaping (NetworkError) -> Void) {
         
         let parameters: Parameters = [SearchParameters.title.rawValue: query,
@@ -37,7 +37,7 @@ final class SearchNetworkController: SearchNetworkProtocol, NetworkResponseHandl
         APIKit.shared.fetchData(forPath: query,
                                 parameters: parameters,
                                 method: .post,
-                                model: SearchResult.self) { (error, model) in
+                                model: Questions.self) { (error, model) in
             
             self.handleResponse(response: model, error: error) { (result) in
                 switch result {

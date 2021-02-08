@@ -14,5 +14,5 @@ protocol APIKitProtocol: APIKit {
                                      method: HTTPMethod,
                                      selectedBaseURL: URLCenter,
                                      model: Model.Type,
-                                     completion: @escaping (NetworkError?, Model?) -> Void)
+                                     completion: @escaping (Model?, URLResponse?, Error?) -> Void)
 }

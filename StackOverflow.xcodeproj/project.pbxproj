@@ -23,7 +23,7 @@
 		C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */; };
 		C653DC8225D014FF00F67F9B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC8125D014FF00F67F9B /* SearchResult.swift */; };
 		C653DC9125D016F200F67F9B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9025D016F200F67F9B /* Question.swift */; };
-		C653DC9925D01CA100F67F9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9825D01CA100F67F9B /* User.swift */; };
+		C653DC9925D01CA100F67F9B /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9825D01CA100F67F9B /* Owner.swift */; };
 		C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
@@ -53,6 +53,8 @@
 		C6AC7A8025CFF44C00C73D75 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */; };
 		C6C5E92725D0221E003FE946 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */; };
 		C6CD253625D02B3E00C3CA0D /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */; };
+		C6ECD3DF25D0B441003CB3CC /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECD3DE25D0B441003CB3CC /* AnswersViewController.swift */; };
+		C6ECD3E825D0B46A003CB3CC /* AnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECD3E725D0B46A003CB3CC /* AnswersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +91,7 @@
 		C653DC7C25D012B900F67F9B /* SearchNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkProtocol.swift; sourceTree = "<group>"; };
 		C653DC8125D014FF00F67F9B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		C653DC9025D016F200F67F9B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		C653DC9825D01CA100F67F9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C653DC9825D01CA100F67F9B /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,8 @@
 		C6AC7A7F25CFF44C00C73D75 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		C6C5E92625D0221E003FE946 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C6CD253525D02B3E00C3CA0D /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		C6ECD3DE25D0B441003CB3CC /* AnswersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
+		C6ECD3E725D0B46A003CB3CC /* AnswersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,13 +174,13 @@
 			path = Observable;
 			sourceTree = "<group>";
 		};
-		C607DD2625CFFAA30025C4C0 /* NetworkController */ = {
+		C607DD2625CFFAA30025C4C0 /* APIKit */ = {
 			isa = PBXGroup;
 			children = (
 				C607DD1C25CFF9200025C4C0 /* NetworkProtocol.swift */,
 				C607DD2125CFF9500025C4C0 /* NetworkController.swift */,
 			);
-			path = NetworkController;
+			path = APIKit;
 			sourceTree = "<group>";
 		};
 		C607DD2A25CFFB2D0025C4C0 /* Error */ = {
@@ -225,7 +229,7 @@
 			children = (
 				C653DC8125D014FF00F67F9B /* SearchResult.swift */,
 				C653DC9025D016F200F67F9B /* Question.swift */,
-				C653DC9825D01CA100F67F9B /* User.swift */,
+				C653DC9825D01CA100F67F9B /* Owner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				C6AC79E525CFEBC900C73D75 /* SearchController */,
+				C6ECD3DA25D0B3B9003CB3CC /* AnswerController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,7 +313,7 @@
 				C607DD1725CFF8950025C4C0 /* URLCenter */,
 				C607DD1825CFF8D50025C4C0 /* Observable */,
 				C6109A7125D0111500115681 /* NetworkResponseHandlerProtcol */,
-				C607DD2625CFFAA30025C4C0 /* NetworkController */,
+				C607DD2625CFFAA30025C4C0 /* APIKit */,
 				C653DCA625D01DB000F67F9B /* HTTPMethodAndHeader */,
 			);
 			path = StackNetworkController;
@@ -482,6 +487,39 @@
 			path = Rechabilty;
 			sourceTree = "<group>";
 		};
+		C6ECD3DA25D0B3B9003CB3CC /* AnswerController */ = {
+			isa = PBXGroup;
+			children = (
+				C6ECD3DB25D0B3E4003CB3CC /* ViewModel */,
+				C6ECD3DC25D0B40A003CB3CC /* Controller */,
+				C6ECD3DD25D0B414003CB3CC /* Components */,
+			);
+			path = AnswerController;
+			sourceTree = "<group>";
+		};
+		C6ECD3DB25D0B3E4003CB3CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C6ECD3E725D0B46A003CB3CC /* AnswersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6ECD3DC25D0B40A003CB3CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C6ECD3DE25D0B441003CB3CC /* AnswersViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C6ECD3DD25D0B414003CB3CC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -624,6 +662,7 @@
 				C607DD2225CFF9500025C4C0 /* NetworkController.swift in Sources */,
 				C607DD3925CFFF040025C4C0 /* URLCenter.swift in Sources */,
 				C6AC7A6125CFF28400C73D75 /* Constraints.swift in Sources */,
+				C6ECD3DF25D0B441003CB3CC /* AnswersViewController.swift in Sources */,
 				C6AC7A3E25CFF0D500C73D75 /* BaseTableViewCell.swift in Sources */,
 				C6AC7A4425CFF10B00C73D75 /* DebugLog.swift in Sources */,
 				C6AC7A3425CFEF8E00C73D75 /* Colour.swift in Sources */,
@@ -631,7 +670,7 @@
 				C6109A4025D000A800115681 /* HTTPHeader.swift in Sources */,
 				C6AC79F825CFEC4400C73D75 /* SearchResultsCell.swift in Sources */,
 				C6C5E92725D0221E003FE946 /* BaseNavigationController.swift in Sources */,
-				C653DC9925D01CA100F67F9B /* User.swift in Sources */,
+				C653DC9925D01CA100F67F9B /* Owner.swift in Sources */,
 				C6AC7A1B25CFED5C00C73D75 /* StackCoordinator.swift in Sources */,
 				C653DC7D25D012B900F67F9B /* SearchNetworkProtocol.swift in Sources */,
 				C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */,
@@ -650,6 +689,7 @@
 				C607DD3425CFFDAB0025C4C0 /* HTTPMethod.swift in Sources */,
 				C607DD2C25CFFB3B0025C4C0 /* NetworkError.swift in Sources */,
 				C60A21AF25D0311B000D3C3F /* SearchViewController+Search.swift in Sources */,
+				C6ECD3E825D0B46A003CB3CC /* AnswersViewModel.swift in Sources */,
 				C6109A5525D0088400115681 /* BundleConstants.swift in Sources */,
 				C6AC7A5025CFF17C00C73D75 /* BaseView.swift in Sources */,
 				C6AC7A5525CFF1A300C73D75 /* UITableViewCell.swift in Sources */,
