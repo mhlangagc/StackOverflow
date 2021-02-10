@@ -25,3 +25,7 @@ This app is a simple implementation of a question searching on Stack Overflow. I
 - Integration of Travis - since this is an open source project
 
 ## Screenshots
+![IMG_1062E656BA54-1](https://user-images.githubusercontent.com/5164871/107460592-0da74d80-6b61-11eb-9f8f-5ea84abaa68e.jpeg)
+
+## DarkMode Screenshots
+![IMG_3133](https://user-images.githubusercontent.com/5164871/107460628-1d269680-6b61-11eb-95bd-8ea4890b228e.PNG)
