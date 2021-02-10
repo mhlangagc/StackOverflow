@@ -22,10 +22,7 @@ class NetworkControlTests: XCTestCase {
         super.tearDown()
         implementationUnderTest = nil
     }
-    
-    /*
-     Search For Results
-     */
+
     func testSearchForQueryReturnsSuccessfully() {
         let mockQuery = "swift"
         let waitingForCompletionExpectation = expectation(description: "Waiting for success block to be called")

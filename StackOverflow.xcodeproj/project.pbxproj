@@ -26,7 +26,11 @@
 		C653DC9925D01CA100F67F9B /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653DC9825D01CA100F67F9B /* Owner.swift */; };
 		C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */; };
 		C674E35825D36CBB00497FC0 /* NetworkControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E35725D36CBB00497FC0 /* NetworkControllerTests.swift */; };
-		C674E35E25D36CFE00497FC0 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E35D25D36CFE00497FC0 /* SearchViewModelTests.swift */; };
+		C674E36A25D3700C00497FC0 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E36925D3700C00497FC0 /* DateExtensionTests.swift */; };
+		C674E37825D3703E00497FC0 /* BundleConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E37725D3703E00497FC0 /* BundleConstantsTests.swift */; };
+		C674E37D25D3706E00497FC0 /* HTTPMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E37C25D3706E00497FC0 /* HTTPMethodTests.swift */; };
+		C674E38325D370AB00497FC0 /* StackCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E38225D370AB00497FC0 /* StackCoordinatorTests.swift */; };
+		C674E38F25D370F100497FC0 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E38E25D370F100497FC0 /* Font.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
 		C6AC79A525CFE8C800C73D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AC79A425CFE8C800C73D75 /* Assets.xcassets */; };
@@ -105,7 +109,11 @@
 		C653DC9825D01CA100F67F9B /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		C65EF36D25CFF6DB00D8A310 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C674E35725D36CBB00497FC0 /* NetworkControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerTests.swift; sourceTree = "<group>"; };
-		C674E35D25D36CFE00497FC0 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		C674E36925D3700C00497FC0 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		C674E37725D3703E00497FC0 /* BundleConstantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleConstantsTests.swift; sourceTree = "<group>"; };
+		C674E37C25D3706E00497FC0 /* HTTPMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodTests.swift; sourceTree = "<group>"; };
+		C674E38225D370AB00497FC0 /* StackCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinatorTests.swift; sourceTree = "<group>"; };
+		C674E38E25D370F100497FC0 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -213,13 +221,6 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		C6109A5C25D008D400115681 /* BundleConstants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BundleConstants;
-			sourceTree = "<group>";
-		};
 		C6109A6825D0103D00115681 /* SearchNetworkController */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,12 +258,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C674E35C25D36CEF00497FC0 /* ViewModelTests */ = {
+		C674E36825D36FFD00497FC0 /* UtilityTests */ = {
 			isa = PBXGroup;
 			children = (
-				C674E35D25D36CFE00497FC0 /* SearchViewModelTests.swift */,
+				C674E36925D3700C00497FC0 /* DateExtensionTests.swift */,
 			);
-			path = ViewModelTests;
+			path = UtilityTests;
+			sourceTree = "<group>";
+		};
+		C674E38125D370A000497FC0 /* CoordinatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				C674E38225D370AB00497FC0 /* StackCoordinatorTests.swift */,
+			);
+			path = CoordinatorTests;
+			sourceTree = "<group>";
+		};
+		C674E38D25D370CE00497FC0 /* LayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LayoutTests;
 			sourceTree = "<group>";
 		};
 		C6AC798F25CFE8C600C73D75 = {
@@ -304,9 +320,11 @@
 		C6AC79B125CFE8C800C73D75 /* StackOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				C6AC79B225CFE8C800C73D75 /* StackOverflowTests.swift */,
-				C674E35C25D36CEF00497FC0 /* ViewModelTests */,
+				C674E38D25D370CE00497FC0 /* LayoutTests */,
+				C674E38125D370A000497FC0 /* CoordinatorTests */,
 				C6D527FC25D1B11F00437F02 /* NetworkTests */,
+				C674E36825D36FFD00497FC0 /* UtilityTests */,
+				C6AC79B225CFE8C800C73D75 /* StackOverflowTests.swift */,
 				C6AC79B425CFE8C800C73D75 /* Info.plist */,
 			);
 			path = StackOverflowTests;
@@ -375,6 +393,7 @@
 		C6AC79DC25CFEB0500C73D75 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				C674E38E25D370F100497FC0 /* Font.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -404,7 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				C6D526D425D0CA9600437F02 /* Extensions */,
-				C6109A5C25D008D400115681 /* BundleConstants */,
 				C6AC7A7B25CFF40E00C73D75 /* Rechabilty */,
 				C6AC7A4225CFF10100C73D75 /* DebugLog */,
 				C6AC7A2A25CFEE9F00C73D75 /* ApplicationRouter */,
@@ -537,6 +555,8 @@
 				C6D527F725D1B0D700437F02 /* URLCenterTest.swift */,
 				C6D5280025D1B1C600437F02 /* StringsTests.swift */,
 				C674E35725D36CBB00497FC0 /* NetworkControllerTests.swift */,
+				C674E37725D3703E00497FC0 /* BundleConstantsTests.swift */,
+				C674E37C25D3706E00497FC0 /* HTTPMethodTests.swift */,
 			);
 			path = NetworkTests;
 			sourceTree = "<group>";
@@ -736,6 +756,7 @@
 				C6D526D025D0C40F00437F02 /* SearchParameters.swift in Sources */,
 				C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */,
 				C653DC8225D014FF00F67F9B /* SearchResult.swift in Sources */,
+				C674E38F25D370F100497FC0 /* Font.swift in Sources */,
 				C6AC7A0B25CFECC700C73D75 /* StringsFile.swift in Sources */,
 				C65EF36E25CFF6DB00D8A310 /* SearchViewModel.swift in Sources */,
 				C6D526D625D0CAB300437F02 /* String+Extension.swift in Sources */,
@@ -766,9 +787,12 @@
 			files = (
 				C674E35825D36CBB00497FC0 /* NetworkControllerTests.swift in Sources */,
 				C6D527F825D1B0D700437F02 /* URLCenterTest.swift in Sources */,
+				C674E36A25D3700C00497FC0 /* DateExtensionTests.swift in Sources */,
+				C674E38325D370AB00497FC0 /* StackCoordinatorTests.swift in Sources */,
+				C674E37825D3703E00497FC0 /* BundleConstantsTests.swift in Sources */,
+				C674E37D25D3706E00497FC0 /* HTTPMethodTests.swift in Sources */,
 				C6AC79B325CFE8C800C73D75 /* StackOverflowTests.swift in Sources */,
 				C6D5280125D1B1C600437F02 /* StringsTests.swift in Sources */,
-				C674E35E25D36CFE00497FC0 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
