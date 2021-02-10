@@ -59,6 +59,8 @@ final class QuestionViewController: BaseViewController {
     
     private func setupNavigationBar() {
         nolineNavigationBar()
+        edgesForExtendedLayout = .all
+        extendedLayoutIncludesOpaqueBars.toggle()
         setNavigationTitle(questionText)
     }
     
