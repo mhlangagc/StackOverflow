@@ -31,6 +31,7 @@
 		C674E37D25D3706E00497FC0 /* HTTPMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E37C25D3706E00497FC0 /* HTTPMethodTests.swift */; };
 		C674E38325D370AB00497FC0 /* StackCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E38225D370AB00497FC0 /* StackCoordinatorTests.swift */; };
 		C674E38F25D370F100497FC0 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E38E25D370F100497FC0 /* Font.swift */; };
+		C674E39725D3781E00497FC0 /* LayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674E39625D3781E00497FC0 /* LayoutTests.swift */; };
 		C6AC799C25CFE8C600C73D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */; };
 		C6AC79A025CFE8C600C73D75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */; };
 		C6AC79A525CFE8C800C73D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AC79A425CFE8C800C73D75 /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		C674E37C25D3706E00497FC0 /* HTTPMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodTests.swift; sourceTree = "<group>"; };
 		C674E38225D370AB00497FC0 /* StackCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinatorTests.swift; sourceTree = "<group>"; };
 		C674E38E25D370F100497FC0 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		C674E39625D3781E00497FC0 /* LayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTests.swift; sourceTree = "<group>"; };
 		C6AC799825CFE8C600C73D75 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AC799B25CFE8C600C73D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6AC799F25CFE8C600C73D75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		C674E38D25D370CE00497FC0 /* LayoutTests */ = {
 			isa = PBXGroup;
 			children = (
+				C674E39625D3781E00497FC0 /* LayoutTests.swift */,
 			);
 			path = LayoutTests;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				C674E35825D36CBB00497FC0 /* NetworkControllerTests.swift in Sources */,
 				C6D527F825D1B0D700437F02 /* URLCenterTest.swift in Sources */,
 				C674E36A25D3700C00497FC0 /* DateExtensionTests.swift in Sources */,
+				C674E39725D3781E00497FC0 /* LayoutTests.swift in Sources */,
 				C674E38325D370AB00497FC0 /* StackCoordinatorTests.swift in Sources */,
 				C674E37825D3703E00497FC0 /* BundleConstantsTests.swift in Sources */,
 				C674E37D25D3706E00497FC0 /* HTTPMethodTests.swift in Sources */,

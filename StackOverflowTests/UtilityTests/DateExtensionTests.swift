@@ -1,5 +1,5 @@
 //
-//  DateExtensionTESTS.swift
+//  DateExtensionTests.swift
 //  StackOverflowTests
 //
 //  Created by Gugulethu on 2021/02/10.
@@ -7,58 +7,40 @@
 
 import Foundation
 
-@frozen enum DateFormat: String {
-    case serverDate     = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-    case dateMonthYear  = "dd MMMM YYYY"
-    case time24hr       = "hh:mm"
-}
+import XCTest
+@testable import StackOverflow
 
-extension Date {
+class DateExtensionTests: XCTestCase {
+
+    var currentDate: Date!
     
-    func stringFromFormat(_ dateFormat: DateFormat) -> String {
+    override func setUp() {
+        super.setUp()
+        //  This tests can be improved as I am not testing the format here. 🤨
         let dateFormatter = DateFormatter()
-
-        switch dateFormat {
-        case .serverDate:
-            dateFormatter.dateFormat = DateFormat.serverDate.rawValue
-        case .dateMonthYear:
-            dateFormatter.dateFormat = DateFormat.dateMonthYear.rawValue
-        case .time24hr:
-            dateFormatter.dateFormat = DateFormat.time24hr.rawValue
-        }
-        
-        return dateFormatter.string(from: self)
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"
+        currentDate = dateFormatter.date(from: "2017-12-28 13:17:10+0000")
     }
     
-    func intFromDate() -> Int {
-        return Int(self.timeIntervalSince1970)
+    override class func tearDown() {
+        super.tearDown()
     }
-}
-
-extension String {
     
-    func dateFromFormat(_ dateFormat: DateFormat) -> Date {
-        let dateFormatter = DateFormatter()
+    func testDateMonthYearDateFormattingIsSuccessful() {
+        let mockFormat = DateFormat.dateMonthYear
+        let formatedDate = currentDate.stringFromFormat(mockFormat)
+        let expectedResult = "28 December 2017"
         
-        switch dateFormat {
-        case .serverDate:
-            dateFormatter.timeZone = TimeZone.current
-            dateFormatter.locale = Locale.current
-            dateFormatter.calendar = Calendar(identifier: .gregorian)
-            dateFormatter.dateFormat = DateFormat.serverDate.rawValue
-        case .time24hr:
-            dateFormatter.dateFormat = DateFormat.time24hr.rawValue
-        case .dateMonthYear:
-            dateFormatter.dateFormat = DateFormat.dateMonthYear.rawValue
-        }
-        
-        return dateFormatter.date(from: self) ?? Date()
+        XCTAssertEqual(expectedResult, formatedDate)
     }
-}
-
-// MARK: Date From Int
-extension Int {
-    func dateFromInt() -> Date {
-        return Date(timeIntervalSince1970: TimeInterval(integerLiteral: Int64(self)))
+    
+    func testtime24hrDateFormattingIsSuccessful() {
+        let mockFormat = DateFormat.time24hr
+        let formatedDate = currentDate.stringFromFormat(mockFormat)
+        let expectedResult = "03:17"
+        let unExpectedResult = "09:49"
+        
+        XCTAssertEqual(expectedResult, formatedDate)
+        XCTAssertNotEqual(unExpectedResult, formatedDate, "")
     }
 }

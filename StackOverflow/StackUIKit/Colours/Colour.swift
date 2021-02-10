@@ -10,11 +10,11 @@ import UIKit
 final class Colour {
     
     //  Black & White
-    static let pale         = Colour.hexToUIColor("EDEDED")
-    static let lightGrey    = Colour.hexToUIColor("8F8E64")
-    static let grey         = Colour.hexToUIColor("727272")
-    static let black        = Colour.hexToUIColor("000000")
-    static let white        = Colour.hexToUIColor("FFFFFF")
+    static let pale         = UIColor(named: "pale") ?? Colour.hexToUIColor("EDEDED")
+    static let lightGrey    = UIColor(named: "lightGrey") ?? Colour.hexToUIColor("8F8E64")
+    static let grey         = UIColor(named: "grey") ?? Colour.hexToUIColor("727272")
+    static let black        = UIColor(named: "black") ?? Colour.hexToUIColor("000000")
+    static let white        = UIColor(named: "white") ?? Colour.hexToUIColor("FFFFFF")
     
     //  Colour
     static let primary      = Colour.hexToUIColor("4078C4")

@@ -6,10 +6,32 @@
 //
 
 import Foundation
+import XCTest
+@testable import StackOverflow
 
-@frozen enum HTTPMethod: String {
-    case post   = "POST"
-    case put    = "PUT"
-    case get    = "GET"
-    case delete = "DELETE"
+class HTTPMethodTests: XCTestCase {
+    
+    func testThatHttpPOSTMatchIsSuccessful() {
+        let fetchedValue =  HTTPMethod.post.rawValue
+        let expectedResult = "POST"
+        XCTAssertEqual(expectedResult, fetchedValue)
+    }
+    
+    func testThatHttpPUTMatchIsSuccessful() {
+        let fetchedValue =  HTTPMethod.put.rawValue
+        let expectedResult = "PUT"
+        XCTAssertEqual(expectedResult, fetchedValue)
+    }
+    
+    func testThatHttpGETMatchIsSuccessful() {
+        let fetchedValue =  HTTPMethod.get.rawValue
+        let expectedResult = "GET"
+        XCTAssertEqual(expectedResult, fetchedValue)
+    }
+    
+    func testThatHttpDELETEMatchIsSuccessful() {
+        let fetchedValue =  HTTPMethod.delete.rawValue
+        let expectedResult = "DELETE"
+        XCTAssertEqual(expectedResult, fetchedValue)
+    }
 }
