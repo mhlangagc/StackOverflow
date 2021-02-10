@@ -20,4 +20,8 @@ This app is a simple implementation of a question searching on Stack Overflow. I
 - Used a Factory Pattern to abstract away the creation of some components / classes. 
 - No Storyboards or XIB's where used, but they can be. 🤓
 
+## CI/CD
+- Added Fastlane to run the unit tests and code coverage. Code Coverage Report could be posted to Slac. 
+- Integration of Travis - since this is an open source project
+
 ## Screenshots
