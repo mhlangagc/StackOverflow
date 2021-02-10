@@ -44,6 +44,7 @@ final class QuestionViewController: BaseViewController {
         let textView = UITextView()
         textView.font = Font.regular13
         textView.textColor = Colour.black
+        textView.backgroundColor = Colour.white
         textView.isEditable = false
         textView.isSelectable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +60,8 @@ final class QuestionViewController: BaseViewController {
     
     private func setupNavigationBar() {
         nolineNavigationBar()
+        edgesForExtendedLayout = .all
+        extendedLayoutIncludesOpaqueBars.toggle()
         setNavigationTitle(questionText)
     }
     

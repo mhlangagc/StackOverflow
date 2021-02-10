@@ -41,6 +41,8 @@ final class SearchViewController: BaseTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nolineNavigationBar()
+        edgesForExtendedLayout = .all
+        extendedLayoutIncludesOpaqueBars.toggle()
         navigationItem.titleView = baseSearchBar
     }
     

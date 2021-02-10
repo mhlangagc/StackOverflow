@@ -18,13 +18,6 @@ final class SearchNetworkController: SearchNetworkProtocol, NetworkResponseHandl
                           onSuccess: @escaping (Questions) -> Void,
                           onError: @escaping (NetworkError) -> Void) {
         
-//        let parameters: Parameters = [SearchParameters.title: query,
-//                                      SearchParameters.pageSize: "20",
-//                                      SearchParameters.order: "desc",
-//                                      SearchParameters.sort: "activity",
-//                                      SearchParameters.site: "stackoverflow",
-//                                      SearchParameters.filter: "withbody"]
-        
         let parameters = SearchParameters(title: query,
                                           pageSize: "20",
                                           order: "desc",

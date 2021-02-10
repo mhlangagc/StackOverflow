@@ -30,7 +30,8 @@ public class BaseViewController: UIViewController {
         let searchBar = UISearchBar()
         searchBar.barStyle = .default
         searchBar.backgroundColor = Colour.primary
-        searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchTextField.backgroundColor = Colour.white
+        searchBar.searchTextField.textColor = Colour.black
         searchBar.searchTextField.autocorrectionType = .no
         searchBar.searchTextField.autocapitalizationType = .none
         searchBar.frame = .zero

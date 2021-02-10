@@ -18,7 +18,7 @@ public class BaseTableViewController: BaseViewController, BaseTableViewProtocol 
                                      style: .grouped)
         tableView.backgroundColor = Colour.pale
         tableView.separatorStyle = .singleLine
-        tableView.showsVerticalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
